@@ -1,0 +1,35 @@
+This document includes the following sections:
+
+    Installation
+
+    Postinstallation
+    
+Files:
+
+- README.txt
+- info.sh
+- info.sql    
+
+1 Installation
+
+- Oracle user unzip the check_oracle.zip:
+
+$ unzip check_oracle.zip
+
+- Give execute permission to info.sh:
+
+$ chmod 755 info.sh
+
+2 Postinstallation
+
+- Execute the following steps with oracle owner to start the collect database evidence:
+
+$ cd check_oracle
+
+$ ./info.sh
+
+- Will be create a html and txt report:
+
+report_{sever_name}_{db_name}_{date}.html
+
+{sever_name}_{date}.txt

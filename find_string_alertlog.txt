@@ -1,0 +1,56 @@
+cat `find $ORACLE_BASE -type f -name alert_$ORACLE_SID.log 2> /dev/null` |  sed -n -e '/$1/{=;x;1!p;g;$!N;p;D;}' -e h
+
+ORA-00020
+
+while true; do grep -in -A0 -B1 ORA-28 alert_pback1.log |tail -n 50;date;  sleep 30; done
+##while true; do grep -in ORA-28 alert_pback1.log |tail -n 50;date;  sleep 30; done
+while true; do grep -in "KILL" /var/log/oracle/ora_audit.log |grep -iv "nvl2(s.module" |grep -iv "SYSDATE DT_INCL"|grep -iv "tvtspi"|grep -iv "sysdate"|grep -iv "from" |tail -n 50;date; sleep 30; done
+
+
+grep -in "KILL" /var/log/oracle/ora_audit.log |grep -iv "nvl2(s.module" |grep -iv "SYSDATE DT_INCL"|grep -iv "tvtspi"|grep -iv "select" |grep -iv "from"
+
+
+while true; do grep -in ORA-28 /var/log/oracle/ora_audit.log |tail -n 50;date; sleep 30; done
+
+while true; do grep -in ORA-28 /var/log/oracle/ora_audit.log |tail -n 50;date; sleep 30; done
+
+
+while true; do grep -in -A0 -B1 ORA-28 alert_pback1.log |tail -n 50;date;  sleep 30; donevi 
+
+grep -inE "*alter*system*kill*immedi" /var/log/oracle/ora_audit.log |grep -iv "nvl2(s.module" |grep -iv "SYSDATE DT_INCL" |grep -iv "dbms_output.put_line"
+
+
+while true; do grep -in "KILL" /var/log/oracle/ora_audit.log |grep -iv "nvl2(s.module" |grep -iv "SYSDATE DT_INCL"|grep -iv "tvtspi"|grep -iv "sysdate" |tail -n 50;date; sleep 30; done
+
+find $ORACLE_BASE -type f -name alert_$ORACLE_SID.log 2> /dev/null
+
+
+ # aparece (similar ao "grep -A1 -B1")
+sed -n -e '/regexp/{=;x;1!p;g;$!N;p;D;}' -e h
+sed -n -e '/autorizado/{=;x;1!p;g;$!N;p;D;}' -e h
+
+
+cat alert_pback1.log |  sed -n -e '/ORA-28/{=;x;1!p;g;$!N;p;D;}' -e h
+cat alert_pauto1.log |  sed -n -e '/autorizado/{=;x;1!p;g;$!N;p;D;}' -e h
+cat /oracle/EVEPD/diag/rdbms/evepd/EVEPD/trace/alert_EVEPD.log |  sed -n -e '/ORA-00020/{=;x;1!p;g;$!N;p;D;}' -e h
+
+
+cat `find $ORACLE_BASE -type f -name alert_$ORACLE_SID.log 2> /dev/null` |  sed -n -e '/ORA-00020/{=;x;1!p;g;$!N;p;D;}' -e h
+
+
+
+
+
+/oracle/EVEPD/diag/rdbms/evepd/EVEPD/trace/alert_EVEPD.log
+
+2628,7407,@1 |             |150 |23290   |E5543793  |e5543793  
+138,13201,@1 |             |481 |18284   |E5543793  |e5543793  
+2501,63109,@1|             |277 |27831   |FPS_URA_MO|svc_fvs_pr
+2364,5867,@1 |             |692 |25526   |FPS_BOB   |svc_fvs_pr
+1340,10689,@1|             |299 |25053   |FPS_BOB   |svc_fvs_pr
+386,25383,@1 |             |323 |1393    |FPS_URA_MO|svc_fvs_pr
+3337,26441,@1|             |604 |29349   |FPS_URA_MO|svc_fvs_pr
+
+
+sh /u/app/oracle/TVTDBA/AUTO/CRON_kill_auto.sh
+

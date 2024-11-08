@@ -1,0 +1,57 @@
+
+-->>01 [BACKGROUND] - Most active session in last one hour can be found using active session history
+SELECT sql_id,COUNT(),ROUND(COUNT(*)/SUM(COUNT(*)) OVER(), 2) PCTLOAD
+FROM gv$active_session_history
+WHERE sample_time > SYSDATE - 1/24
+AND session_type = 'BACKGROUND'
+and sql_id is not null
+GROUP BY sql_id
+ORDER BY COUNT(*) DESC
+/
+
+-->>02 [FOREGROUND] Most active session in last one hour can be found using active session history
+SELECT sql_id,COUNT(*),ROUND(COUNT(*)/SUM(COUNT(*)) OVER(), 2) PCTLOAD
+FROM gv$active_session_history
+WHERE sample_time > SYSDATE - 1/24
+AND session_type = 'FOREGROUND'
+and sql_id is not null
+GROUP BY sql_id
+ORDER BY COUNT(*) DESC
+/
+
+-->>03 To find out the wait events for which this session
+SELECT sample_time, event, wait_time
+FROM gv$active_session_history
+WHERE session_id = &1
+AND session_serial# = &2
+/
+
+
+-->>04 Most I/O intensive sql in last 1 hour
+SELECT sql_id, COUNT(*)
+FROM gv$active_session_history ash, gv$event_name evt
+WHERE ash.sample_time > SYSDATE - 1/24
+AND ash.session_state = 'WAITING'
+AND ash.event_id = evt.event_id
+AND evt.wait_class = 'User I/O'
+GROUP BY sql_id
+having COUNT(*) > 10
+ORDER BY COUNT(*) DESC;
+
+
+--> A particular session sql analysis
+SELECT C.SQL_TEXT,
+B.NAME,
+COUNT(*),
+SUM(TIME_WAITED)
+FROM v$ACTIVE_SESSION_HISTORY A,
+v$EVENT_NAME B,
+v$SQLAREA C
+WHERE A.SAMPLE_TIME BETWEEN '&starttime' AND
+'&endtime' AND
+A.EVENT# = B.EVENT# AND
+A.SESSION_ID= &sid AND
+A.SQL_ID = C.SQL_ID
+GROUP BY C.SQL_TEXT, B.NAME
+
+

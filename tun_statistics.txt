@@ -1,0 +1,61 @@
+
+-- Lista as operações de coleta de estatísticas
+col operation for a30
+col target for a40 
+col start_time for a35
+col end_time for a35
+
+select OPERATION, TARGET, START_TIME, END_TIME  
+  from DBA_OPTSTAT_OPERATIONS ;
+
+
+
+col schema_name for a12
+col job_action for a40
+col schedule for a60
+col start_date for a35
+col last_start_date for a35
+col state for a15
+col next_run_date for a35
+
+select owner as schema_name,
+       job_name,
+       job_style,
+       case when job_type is null 
+                 then 'PROGRAM'
+            else job_type end as job_type,  
+       case when job_type is null
+                 then program_name
+                 else job_action end as job_action,
+       start_date,
+       case when repeat_interval is null
+            then schedule_name
+            else repeat_interval end as schedule,
+       last_start_date,
+       next_run_date,
+       state
+  from sys.all_scheduler_jobs
+ where owner='SYS'
+ order by owner,
+         job_name;
+
+col client_name for a40
+col task_name for a20
+col status for a15
+col program_action for a60
+select client_name, task_name, status, program_action
+  from dba_autotask_task, dba_scheduler_programs
+ where upper(task_name)=upper(program_name)
+   and client_name='auto optimizer stats collection';
+   
+
+select stale_stats, 
+       count(*) cnt, 
+       count(*)/sum(count(*)) over() percentage 
+  from dba_tab_statistics 
+ group by stale_stats 
+ order by stale_stats;
+
+select owner, table_name , partition_name 
+  from dba_tab_statistics 
+ where stale_stats='YES';

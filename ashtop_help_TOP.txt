@@ -1,0 +1,1253 @@
+==================================================================================================================================================================
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value,substr(machine,5,4) "username='FCORPODS_C' AND (machine like 'brux101%' or machine like 'brux102%')" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+
+
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value,username "1=1 AND 2=2" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+
+sshdb P00CO1
+scp 10.54.0.115:/tmp/.g/* .
+P4cnfdd#tgsd4
+
+
+####    @ashtop &s "&u='FCORPODS_C' and machine like 'brux1015%'" &p'brux1016%'" &p
+...
+####    @ashtop &s "&u='FCORPODS_C' and machine like 
+####    @ashtop &s "&u='FCORPODS_C' and machine like 'brux1025%'" &p
+
+
+username
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop event2,sql_id,objt "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop event2,sql_id,sql_opname,wait_class "current_obj#>0 and sql_id<>'GUINA'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+==================================================================================================================================================================
+
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+
+==================================================================================================================================================================
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2021-10-26 12:30:00'" "timestamp'2021-10-18 14:00:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop event2,sql_id,sql_opname,wait_class "current_obj#>0 and sql_id<>'GUINA'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+==================================================================================================================================================================
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop event2,sql_id,sql_opname,wait_class "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+==================================================================================================================================================================
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop event2,sql_id,sql_opname,objt "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop event2,sql_id,username,sql_opname,objt "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+####    @ashtop event2,sql_id,sql_opname,wait_class "current_obj#>0 and sql_id<>'80jvhsgk6yg6m'" "timestamp'2024-01-30 03:30:00'" "timestamp'2021-02-18 20:20:00'"
+==================================================================================================================================================================
+
+wait_class
+
+==========================================================================
+ INICIO SNAPPER INSTANCE . . . . : pauto1
+==========================================================================
+ DATA HRS: . . . . . . . . . . . : 26/Feb/2021_16:00:05
+==========================================================================
+
+
+
++------------------------------------------------------------------------+
+| Report   : Active Sessions Oracle              +-+-+-+-+-+-+-+-+-+-+   |
+| Instance : pauto1                              |r|f|s|o|b|r|i|n|h|o|   |
+| Version  : 2.1                                 +-+-+-+-+-+-+-+-+-+-+   |
++------------------------------------------------------------------------+
+SID/SERIAL####    @I   |SLAVE/W_CLASS    |OPID|SOPID   |USERNAME  |OSUSER    |PROGRAM   |MACHINE             |LOGON_TIME|CALL_ET|SESSIONWAIT              |SQL_ID       |HOLD  |WAIT  |MODULE
+---------------|-----------------|----|--------|----------|----------|----------|--------------------|----------|-------|-------------------------|-------------|------|------|--------
+133,37399,####    @1   |* Network        |305 |23627   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211531|1      |message to client        |cvabr8zpvacs6|,     |0     |[JDBC ]
+725,29359,####    @1   |* Other          |39  |990     |TVTSPI    |oracle    |sqlplus####    @un|unxorasp03          |2602211600|2      |ASM file metadata operati|fxvr7pwh58ps6|,     |2     |[SQL*P]
+1167,35057,####    @1  |* Application    |76  |6191    |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602210632|8      |enq: TX - row lock conten|cjdhxn0jyv7p6|1452,2|8     |[JDBC ]
+777,35623,####    @1   |* Application    |136 |6198    |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602210632|29     |enq: TX - row lock conten|73kcxu9s6s3y9|1452,2|28    |[JDBC ]
+304,64385,####    @1   |* Application    |419 |20855   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211552|47     |enq: TX - row lock conten|73kcxu9s6s3y9|1452,2|46    |[JDBC ]
+413,60177,####    @1   |* Application    |436 |24886   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211555|77     |enq: TX - row lock conten|73kcxu9s6s3y9|1452,2|77    |[JDBC ]
+61,58783,####    @2    |* Cluster        |320 |26211   |DBLNK_AAS |oracle    |oracle####    @lnx|lnxorasp11          |2602211600|0      |message from client      |drwa82xur6g8h|,     |0     |[ORACL]
+1380,43801,####    @2  |* Application    |190 |25575   |DBLNK_AAS |oracle    |oracle####    @lnx|lnxorasp11          |2602211559|0      |row cache lock           |4y2vsm1536g44|,     |0     |[ORACL]
+250,5,####    @2       |* Cluster        |546 |12881   |FPS_AS    |was       |JDBC Thin |unxwassp07          |1102211922|0      |db file sequential read  |2f5dszzkqrb4u|,     |0     |[JDBC ]
+529,20509,####    @2   |* Network        |213 |26160   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211600|1      |gc cr request            |dafww0wt3pw4d|,     |1     |[JDBC ]
+794,16447,####    @2   |* Application    |408 |21735   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211552|36     |enq: TX - row lock conten|fzwufh6jhhva8|413,1 |36    |[JDBC ]
+708,38319,####    @2   |* Application    |311 |12388   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211354|67     |enq: TX - row lock conten|87064bzwc52z8|1452,2|67    |[JDBC ]
+1481,39463,####    @1  |* Cluster        |239 |606     |SYS [DBMS]|oracle    |(J000)-JOB|unxorasp03          |2602211559|15     |gc cr request            |752vf8t9r61uw|,     |0     |[DBMS_]
+329,63679,####    @2   |* User I/O       |291 |26107   |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211600|3      |db file scattered read   |80jvhsgk6yg6m|,     |0     |[SQLPL]
+1201,237,####    @2    |* User I/O       |156 |8470    |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211530|1804   |db file sequential read  |80jvhsgk6yg6m|,     |0     |[SQLPL]
+143,11489,####    @2   |* User I/O       |161 |21140   |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211500|3603   |db file sequential read  |80jvhsgk6yg6m|,     |0     |[SQLPL]
+903,31979,####    @2   |* User I/O       |169 |3042    |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211430|5404   |db file sequential read  |80jvhsgk6yg6m|,     |0     |[SQLPL]
+
+
++------------------------------------------------------------------------+
+| Report   : Active Sessions Oracle              +-+-+-+-+-+-+-+-+-+-+   |
+| Instance : pauto1                              |r|f|s|o|b|r|i|n|h|o|   |
+| Version  : 2.1                                 +-+-+-+-+-+-+-+-+-+-+   |
++------------------------------------------------------------------------+
+SID/SERIAL####    @I   |SLAVE/W_CLASS    |OPID|SOPID   |USERNAME  |OSUSER    |PROGRAM   |MACHINE             |LOGON_TIME|CALL_ET|SESSIONWAIT              |SQL_ID       |HOLD  |WAIT  |MODULE
+---------------|-----------------|----|--------|----------|----------|----------|--------------------|----------|-------|-------------------------|-------------|------|------|--------
+133,37399,####    @1   |* Network        |305 |23627   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211531|1      |message to client        |cvabr8zpvacs6|,     |0     |[JDBC ]
+725,29359,####    @1   |* Other          |39  |990     |TVTSPI    |oracle    |sqlplus####    @un|unxorasp03          |2602211600|2      |ASM file metadata operati|fxvr7pwh58ps6|,     |2     |[SQL*P]
+1167,35057,####    @1  |* Application    |76  |6191    |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602210632|8      |enq: TX - row lock conten|cjdhxn0jyv7p6|1452,2|8     |[JDBC ]
+777,35623,####    @1   |* Application    |136 |6198    |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602210632|29     |enq: TX - row lock conten|73kcxu9s6s3y9|1452,2|28    |[JDBC ]
+304,64385,####    @1   |* Application    |419 |20855   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211552|47     |enq: TX - row lock conten|73kcxu9s6s3y9|1452,2|46    |[JDBC ]
+413,60177,####    @1   |* Application    |436 |24886   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211555|77     |enq: TX - row lock conten|73kcxu9s6s3y9|1452,2|77    |[JDBC ]
+61,58783,####    @2    |* Cluster        |320 |26211   |DBLNK_AAS |oracle    |oracle####    @lnx|lnxorasp11          |2602211600|0      |message from client      |drwa82xur6g8h|,     |0     |[ORACL]
+1380,43801,####    @2  |* Application    |190 |25575   |DBLNK_AAS |oracle    |oracle####    @lnx|lnxorasp11          |2602211559|0      |row cache lock           |4y2vsm1536g44|,     |0     |[ORACL]
+250,5,####    @2       |* Cluster        |546 |12881   |FPS_AS    |was       |JDBC Thin |unxwassp07          |1102211922|0      |db file sequential read  |2f5dszzkqrb4u|,     |0     |[JDBC ]
+529,20509,####    @2   |* Network        |213 |26160   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211600|1      |gc cr request            |dafww0wt3pw4d|,     |1     |[JDBC ]
+794,16447,####    @2   |* Application    |408 |21735   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211552|36     |enq: TX - row lock conten|fzwufh6jhhva8|413,1 |36    |[JDBC ]
+708,38319,####    @2   |* Application    |311 |12388   |FPS_AF    |was       |JDBC Thin |unxwassp07          |2602211354|67     |enq: TX - row lock conten|87064bzwc52z8|1452,2|67    |[JDBC ]
+1481,39463,####    @1  |* Cluster        |239 |606     |SYS [DBMS]|oracle    |(J000)-JOB|unxorasp03          |2602211559|15     |gc cr request            |752vf8t9r61uw|,     |0     |[DBMS_]
+329,63679,####    @2   |* User I/O       |291 |26107   |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211600|3      |db file scattered read   |80jvhsgk6yg6m|,     |0     |[SQLPL]
+1201,237,####    @2    |* User I/O       |156 |8470    |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211530|1804   |db file sequential read  |80jvhsgk6yg6m|,     |0     |[SQLPL]
+143,11489,####    @2   |* User I/O       |161 |21140   |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211500|3603   |db file sequential read  |80jvhsgk6yg6m|,     |0     |[SQLPL]
+903,31979,####    @2   |* User I/O       |169 |3042    |SYS [SQLP]|oracle    |sqlplus####    @un|unxorasp04          |2602211430|5404   |db file sequential read  |80jvhsgk6yg6m|,     |0     |[SQLPL]
+
+
+
+BREAK ON x SKIP 2 ON REPORT 
+COMPUTE SUM OF  maxchages   ON report
+
+SELECT /*+ parallel(dhss,8) parallel(dhsso,8) parallel(dhs,8) */
+       to_char(begin_interval_time, 'YYYY_MM_DD HH24:MI') snap_time,
+       dhsso.object_name,
+       sum(db_block_changes_delta) as maxchages
+  FROM dba_hist_seg_stat     dhss,
+       dba_hist_seg_stat_obj dhsso,
+       dba_hist_snapshot     dhs
+ WHERE dhs.snap_id = dhss.snap_id
+   AND dhs.instance_number = dhss.instance_number
+   AND dhss.obj# = dhsso.obj#
+   AND dhss.dataobj# = dhsso.dataobj#
+   AND begin_interval_time BETWEEN
+       to_date('18/02/2021 19:30:00', 'dd/mm/yyyy hh24:mi:ss') and
+       to_date('18/02/2021 20:30:00', 'dd/mm/yyyy hh24:mi:ss')
+and dhsso.object_name like '%AU_OPEN%'	   
+ GROUP BY to_char(begin_interval_time, 'YYYY_MM_DD HH24:MI'),
+          dhsso.object_name
+ having  sum(db_block_changes_delta) > 1         
+ order by maxchages asc
+/
+
+
+
+
+
+https://www.centroid.com/blog/db-time-average-active-sessions-and-some-scripts/
+
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id<>'43x7kshhy79f3'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id='43x7kshhy79f3'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop session_state,event,p2text,p2,p3text,p3 "1=1 AND sql_id<>'43x7kshhy79f3'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id=sql_id" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+
+ ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+ ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id<>'43x7kshhy79f3'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+ ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id='43x7kshhy79f3'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+ ####    @ashtop session_state,event,p2text,p2,p3text,p3 "1=1 AND sql_id<>'43x7kshhy79f3'" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+ ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id=sql_id" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+ ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND sql_id=sql_id" "timestamp'2024-01-30 03:30:00'" "timestamp'2024-01-30 04:30:00'"
+ 
+
+(2) Most active session in last one hour can be found using active session history
+
+SELECT sql_id,COUNT(*),ROUND(COUNT(*)/SUM(COUNT(*)) OVER(), 2) PCTLOAD
+FROM sys.WRH$_ACTIVE_SESSION_HISTORY  --  gv$active_session_history
+WHERE sample_time  between
+       to_date('03/09/2021 11:00', 'dd/mm/yyyy hh24:mi') and
+       to_date('03/09/2021 11:30', 'dd/mm/yyyy hh24:mi')
+AND session_type = 'BACKGROUND'
+GROUP BY sql_id
+ORDER BY COUNT(*) DESC
+/
+=========================================================================
+https://sites.google.com/site/oraclemonitor/dba_hist_active_sess_history
+https://sites.google.com/site/oraclemonitor/dba_hist_active_sess_history
+=========================================================================
+col event for a25
+select /*+ PARALLEL(a,15) */  event,round(min(p3)) mn,
+round(avg(p3)) av,
+round(max(p3)) mx,
+count(*)  cnt
+from dba_hist_active_sess_history a
+--from v$active_session_history
+where sample_time  between
+       to_date('03/09/2021 11:00', 'dd/mm/yyyy hh24:mi') and
+       to_date('03/09/2021 11:30', 'dd/mm/yyyy hh24:mi')
+---and  (event like 'db file%' or event like 'direct %') and event not like '%parallel%'	   
+group by event
+order by event
+/
+=========================================================================
+Def v_secs=3600 --  bucket size
+Def v_days=1 --  total time analyze
+Def v_bars=5 -- size of one AAS in characters
+Def v_graph=80
+
+col aveact format 999.99
+col graph format a30
+col fpct format 999.99
+col spct format 999.99
+col tpct format 999.99
+col aas1 format 999.99
+col aas2 format 999.99
+
+
+select to_char(start_time,'DD HH24:MI:SS'),
+       samples,
+       --total,
+       --waits,
+       --cpu,
+       round(fpct * (total/&v_secs),2) aas1,
+       decode(fpct,null,null,first) first,
+       round(spct * (total/&v_secs),2) aas2,
+       decode(spct,null,null,second) second,
+        substr(substr(rpad('+',round((cpu*&v_bars)/&v_secs),'+') ||
+        rpad('-',round((waits*&v_bars)/&v_secs),'-')  ||
+        rpad(' ',p.value * &v_bars,' '),0,(p.value * &v_bars)) ||
+        p.value  ||
+        substr(rpad('+',round((cpu*&v_bars)/&v_secs),'+') ||
+        rpad('-',round((waits*&v_bars)/&v_secs),'-')  ||
+        rpad(' ',p.value * &v_bars,' '),(p.value * &v_bars),10) ,0,30)
+        graph
+     --  spct,
+     --  decode(spct,null,null,second) second,
+     --  tpct,
+     --  decode(tpct,null,null,third) third
+from (
+select start_time
+     , max(samples) samples
+     , sum(top.total) total
+     , round(max(decode(top.seq,1,pct,null)),2) fpct
+     , substr(max(decode(top.seq,1,decode(top.event,'ON CPU','CPU',event),null)),0,15) first
+     , round(max(decode(top.seq,2,pct,null)),2) spct
+     , substr(max(decode(top.seq,2,decode(top.event,'ON CPU','CPU',event),null)),0,15) second
+     , round(max(decode(top.seq,3,pct,null)),2) tpct
+     , substr(max(decode(top.seq,3,decode(top.event,'ON CPU','CPU',event),null)),0,10) third
+     , sum(waits) waits
+     , sum(cpu) cpu
+from (
+  select
+       to_date(tday||' '||tmod*&v_secs,'YYMMDD SSSSS') start_time
+     , event
+     , total
+     , row_number() over ( partition by id order by total desc ) seq
+     , ratio_to_report( sum(total)) over ( partition by id ) pct
+     , max(samples) samples
+     , sum(decode(event,'ON CPU',total,0))    cpu
+     , sum(decode(event,'ON CPU',0,total))    waits
+  from (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYMMDD')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYMMDD')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',1,decode(session_type,'BACKGROUND',0,1))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        v$active_session_history ash
+     	where sample_time  between
+			   to_date('11/12/2021 20:20','dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30','dd/mm/yyyy hh24:mi')
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYMMDD')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+union all
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYMMDD')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYMMDD')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+		where sample_time  between
+			   to_date('11/12/2021 20:20','dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30','dd/mm/yyyy hh24:mi')
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYMMDD')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+  )  chunks
+  group by id, tday, tmod, event, total
+) top
+group by start_time
+) aveact,
+  v$parameter p
+where p.name='cpu_count'
+order by start_time
+/
+=========================================================================
+Def v_secs=3600 --  bucket size
+Def v_days=1 --  total time analyze
+Def v_bars=5 -- size of one AAS in characters
+Def v_graph=80
+
+col aveact format 999.99
+col graph format a30
+col fpct format 999.99
+col spct format 999.99
+col tpct format 999.99
+col aas1 format 999.99
+col aas2 format 999.99
+
+select start_time
+     , max(samples) samples
+     , sum(top.total) total
+     , round(max(decode(top.seq,1,pct,null)),2) fpct
+     , substr(max(decode(top.seq,1,decode(top.event,'ON CPU','CPU',event),null)),0,15) first
+     , round(max(decode(top.seq,2,pct,null)),2) spct
+     , substr(max(decode(top.seq,2,decode(top.event,'ON CPU','CPU',event),null)),0,15) second
+     , round(max(decode(top.seq,3,pct,null)),2) tpct
+     , substr(max(decode(top.seq,3,decode(top.event,'ON CPU','CPU',event),null)),0,10) third
+     , sum(waits) waits
+     , sum(cpu) cpu
+from (
+  select
+       to_date(tday||' '||tmod*&v_secs,'YYMMDD SSSSS') start_time
+     , event
+     , total
+     , row_number() over ( partition by id order by total desc ) seq
+     , ratio_to_report( sum(total)) over ( partition by id ) pct
+     , max(samples) samples
+     , sum(decode(event,'ON CPU',total,0))    cpu
+     , sum(decode(event,'ON CPU',0,total))    waits
+  from (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYMMDD')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYMMDD')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',1,decode(session_type,'BACKGROUND',0,1))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        v$active_session_history ash
+     	where sample_time  between
+			   to_date('11/12/2021 20:20', 'dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30', 'dd/mm/yyyy hh24:mi')
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYMMDD')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+union all
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYMMDD')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYMMDD')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+		where sample_time  between
+			   to_date('11/12/2021 20:20', 'dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30', 'dd/mm/yyyy hh24:mi')
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYMMDD')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+  )  chunks
+  group by id, tday, tmod, event, total
+) top
+group by start_time
+/
+
+11:10 / 11:16
+START_TIM    SAMPLES      TOTAL    FPCT FIRST              SPCT SECOND             TPCT THIRD           WAITS        CPU
+--------- ---------- ---------- ------- --------------- ------- --------------- ------- ---------- ---------- ----------
+03-SEP-20        351      47740     .66 enq: SQ - conte     .10 CPU                 .10 enq: TX -       42810       4930
+
+11:10 / 11:12
+START_TIM    SAMPLES      TOTAL    FPCT FIRST              SPCT SECOND             TPCT THIRD           WAITS        CPU
+--------- ---------- ---------- ------- --------------- ------- --------------- ------- ---------- ---------- ----------
+03-SEP-20        111       5110     .34 CPU                 .27 enq: TX - row l     .23 db file se       3360       1750
+
+
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYYYMMDDHH24MI')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+		where sample_time  between
+			   to_date('11/12/2021 20:20','dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30','dd/mm/yyyy hh24:mi')
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+ORDER BY 		total	
+/
+TDAY               TMOD ID                                                   EVENT                                                                 TOTAL    SAMPLES
+------------ ---------- ---------------------------------------------------- ---------------------------------------------------------------- ---------- ----------
+202109031111         11 20210903111111                                       LNS wait on SENDREQ                                                       0          1
+202109031110         11 20210903111011                                       db file parallel write                                                    0          1
+202109031110         11 20210903111011                                       log file parallel write                                                   0          1
+202109031111         11 20210903111111                                       db file parallel write                                                    0          1
+202109031111         11 20210903111111                                       log file parallel write                                                   0          1
+202109031111         11 20210903111111                                       direct path write temp                                                   10          1
+202109031111         11 20210903111111                                       gc current block 2-way                                                   10          1
+202109031111         11 20210903111111                                       log file sync                                                            10          1
+202109031110         11 20210903111011                                       gc cr request                                                            10          1
+202109031110         11 20210903111011                                       read by other session                                                    10          1
+202109031110         11 20210903111011                                       gc current grant 2-way                                                   10          1
+202109031110         11 20210903111011                                       gc cr grant 2-way                                                        10          1
+202109031111         11 20210903111111                                       db file parallel read                                                    20          1
+202109031110         11 20210903111011                                       db file parallel read                                                    20         21
+202109031110         11 20210903111011                                       null event                                                               30         31
+202109031110         11 20210903111011                                       log file sync                                                            30         11
+202109031111         11 20210903111111                                       db file scattered read                                                   50         51
+202109031110         11 20210903111011                                       db file scattered read                                                   60         51
+202109031110         11 20210903111011                                       SQL*Net message from dblink                                             210         51
+202109031111         11 20210903111111                                       SQL*Net message from dblink                                             310         51
+202109031111         11 20210903111111                                       db file sequential read                                                 440         51
+202109031110         11 20210903111011                                       enq: TX - row lock contention                                           650         51
+202109031111         11 20210903111111                                       enq: TX - row lock contention                                           720         51
+202109031110         11 20210903111011                                       db file sequential read                                                 750         51
+202109031110         11 20210903111011                                       ON CPU                                                                  810         51
+202109031111         11 20210903111111                                       ON CPU                                                                  940         51
+
+
+
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYYYMMDDHH24MI')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+		where sample_time  between
+			   to_date('03/09/2021 11:08', 'dd/mm/yyyy hh24:mi') and
+			   to_date('03/09/2021 11:13', 'dd/mm/yyyy hh24:mi')
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+ORDER BY 		total	
+/
+
+====================
+===AQUI EU PEGUEI===
+====================
+SELECT Z.* FROM (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYYYMMDDHH24MI')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+		where sample_time  between
+			   to_date('11/12/2021 20:20','dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30','dd/mm/yyyy hh24:mi')
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+ORDER BY 		total	) Z
+WHERE Z.total > 99
+ AND event LIKE '%enq:%'
+/
+TDAY               TMOD ID                                                   EVENT                                                                 TOTAL    SAMPLES
+------------ ---------- ---------------------------------------------------- ---------------------------------------------------------------- ---------- ----------
+202109031108         11 20210903110811                                       enq: TX - row lock contention                                           180         51
+202109031109         11 20210903110911                                       enq: TX - row lock contention                                           480         51
+202109031116         11 20210903111611                                       enq: TX - row lock contention                                           650         51
+202109031110         11 20210903111011                                       enq: TX - row lock contention                                           650         51
+202109031123         11 20210903112311                                       enq: TX - row lock contention                                           680   18083949
+202109031117         11 20210903111711                                       enq: TX - row lock contention                                           700         51
+202109031111         11 20210903111111                                       enq: TX - row lock contention                                           720         51
+202109031115         11 20210903111511                                       enq: TX - row lock contention                                           730         51
+202109031112         11 20210903111211                                       enq: TX - row lock contention                                           830         51
+202109031113         11 20210903111311                                       enq: TX - row lock contention                                           860         51
+202109031121         11 20210903112111                                       enq: TX - row lock contention                                           890         51
+202109031114         11 20210903111411                                       enq: TX - row lock contention                                           910         51
+202109031118         11 20210903111811                                       enq: TX - row lock contention                                           960         51
+202109031120         11 20210903112011                                       enq: TX - row lock contention                                          1010         51
+202109031119         11 20210903111911                                       enq: TX - row lock contention                                          1020         51
+202109031122         11 20210903112211                                       enq: TX - row lock contention                                          1130   18083969
+202109031114         11 20210903111411                                       enq: SQ - contention                                                   3890         21
+202109031115         11 20210903111511                                       enq: SQ - contention                                                  27720         51
+202109031123         11 20210903112311                                       enq: SQ - contention                                                  30220   18083929
+202109031116         11 20210903111611                                       enq: SQ - contention                                                  58700   18083969
+202109031117         11 20210903111711                                       enq: SQ - contention                                                  71200   18083969
+202109031118         11 20210903111811                                       enq: SQ - contention                                                  72220   18083969
+202109031121         11 20210903112111                                       enq: SQ - contention                                                  79730   18083969
+202109031120         11 20210903112011                                       enq: SQ - contention                                                  85820   18083969
+202109031119         11 20210903111911                                       enq: SQ - contention                                                  86440   18083969
+202109031122         11 20210903112211                                       enq: SQ - contention                                                  86900   18083969
+
+Def v_secs=3600 --  bucket size
+Def v_days=1 --  total time analyze
+Def v_bars=5 -- size of one AAS in characters
+Def v_graph=80
+
+col aveact format 999.99
+col event    format a30
+col USERNAME format a20
+col obj       format a35
+col fpct format 999.99
+col spct format 999.99
+col tpct format 999.99
+col aas1 format 999.99
+col aas2 format 999.99
+
+
+SELECT Z.* FROM (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+     --  , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , SQL_ID, substr(PROGRAM,1,12) prog,  u.username, BLOCKING_SESSION_SERIAL# block, OWNER||'.'||OBJECT_NAME obj
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash, dba_users u, dba_objects o
+		where sample_time  between
+			   to_date('11/12/2021 20:20','dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30','dd/mm/yyyy hh24:mi')
+			   and ash.USER_ID = u.USER_ID
+			   and ash.CURRENT_OBJ# = o.object_id(+)
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by SQL_ID, substr(PROGRAM,1,12), u.username, BLOCKING_SESSION_SERIAL# , OWNER||'.'||OBJECT_NAME
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+ORDER BY 		total	) Z
+WHERE Z.total > 99
+-- AND event LIKE '%enq:%'
+ORDER BY tday
+/
+
+
+
+Def v_secs=3600 --  bucket size
+Def v_days=1 --  total time analyze
+Def v_bars=5 -- size of one AAS in characters
+Def v_graph=80
+
+col aveact format 999.99
+col event    format a30
+col USERNAME format a20
+col sess      format a15
+col obj       format a35
+col fpct format 999.99
+col spct format 999.99
+col tpct format 999.99
+col aas1 format 999.99
+col aas2 format 999.99
+
+
+SELECT Z.* FROM (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+     --  , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , SQL_ID, substr(PROGRAM,1,12) prog,  u.username, BLOCKING_SESSION_SERIAL# block, OWNER||'.'||OBJECT_NAME obj
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash, dba_users u, dba_objects o
+		where sample_time  between
+			   to_date('03/09/2021 10:50', 'dd/mm/yyyy hh24:mi') and
+			   to_date('03/09/2021 11:40', 'dd/mm/yyyy hh24:mi')
+			   and ash.USER_ID = u.USER_ID
+			   and ash.CURRENT_OBJ# = o.object_id(+)
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by SQL_ID, substr(PROGRAM,1,12), u.username, BLOCKING_SESSION_SERIAL# , OWNER||'.'||OBJECT_NAME
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+ORDER BY 		total	) Z
+WHERE Z.total > 99 AND event LIKE '%enq:%'
+ORDER BY tday
+/
+
+---DETALHADO COM A SESSÃO
+
+SESS
+
+SELECT Z.* FROM (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+     --  , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+	  ,ash.SESSION_ID||' '||ash.SESSION_SERIAL# as sess
+       , SQL_ID, substr(PROGRAM,1,12) prog,  u.username, BLOCKING_SESSION_SERIAL# block, OWNER||'.'||OBJECT_NAME obj
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash, dba_users u, dba_objects o
+		where sample_time  between
+			   to_date('11/12/2021 20:20', 'dd/mm/yyyy hh24:mi') and
+			   to_date('11/12/2021 20:30', 'dd/mm/yyyy hh24:mi')
+			   and ash.USER_ID = u.USER_ID
+			   and ash.CURRENT_OBJ# = o.object_id(+)
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by SQL_ID, substr(PROGRAM,1,12), u.username, BLOCKING_SESSION_SERIAL# , OWNER||'.'||OBJECT_NAME
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event), ash.SESSION_ID||' '||ash.SESSION_SERIAL#
+ORDER BY 		total	) Z
+--WHERE event LIKE '%enq: TX%'
+ORDER BY tday
+/
+
+--IDENTIFICANDO PELA SESSÃO 
+SELECT Z.* FROM (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYYYMMDDHH24MI')                      tday
+     --  , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+	  ,ash.SESSION_ID||' '||ash.SESSION_SERIAL# as sess
+       , SQL_ID, substr(PROGRAM,1,12) prog,  u.username, BLOCKING_SESSION_SERIAL# block, OWNER||'.'||OBJECT_NAME obj
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash, dba_users u, dba_objects o
+		where sample_time  between
+			   to_date('03/09/2021 09:10', 'dd/mm/yyyy hh24:mi') and
+			   to_date('03/09/2021 11:40', 'dd/mm/yyyy hh24:mi')
+			   and ash.USER_ID = u.USER_ID
+			   and ash.CURRENT_OBJ# = o.object_id(+)
+         and sample_time < ( select min(sample_time) from v$active_session_history)
+     group by SQL_ID, substr(PROGRAM,1,12), u.username, BLOCKING_SESSION_SERIAL# , OWNER||'.'||OBJECT_NAME
+            ,  to_char(sample_time,'YYYYMMDDHH24MI')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event), ash.SESSION_ID||' '||ash.SESSION_SERIAL#
+ORDER BY 		total	) Z
+WHERE sess LIKE '%37737%'
+ORDER BY tday
+/
+
+
+
+
+aveactnds - dba_hist_active_sess_history (input DBID and SQL_ID)
+
+
+Def v_secs=3600 --  bucket size
+Def v_days=1 --  total time analyze
+Def v_bars=5 -- size of one AAS in characters
+Def v_graph=80
+
+col aveact format 999.99
+col graph format a80
+col fpct format 9.99
+col spct format 9.99
+col tpct format 9.99
+col aas format 999.99
+col aas1 format 9.99
+col aas2 format 9.99
+col pct1 format 999
+col pct2 format 999
+col first format  a15
+col second format  a15
+
+Def p_value=4
+
+select to_char(start_time,'DD HH24:MI'),
+       --samples,
+       --total,
+       --waits,
+       --cpu,
+       (total/&v_secs) aas,
+       --round(fpct * (total/&v_secs),2) aas1,
+       fpct*100  pct1,
+       decode(fpct,null,null,first) first,
+       --round(spct * (total/&v_secs),2) aas2,
+       spct*100 pct2,
+       decode(spct,null,null,second) second,
+    -- substr, ie trunc, the whole graph to make sure it doesn't overflow
+        substr(
+       -- substr, ie trunc, the graph below the # of CPU cores line
+           -- draw the whole graph and trunc at # of cores line
+       substr(
+         rpad('+',round((cpu*&v_bars)/&v_secs),'+') ||
+             rpad('o',round((io*&v_bars)/&v_secs),'o')  ||
+             rpad('-',round((waits*&v_bars)/&v_secs),'-')  ||
+             rpad(' ',&p_value * &v_bars,' '),0,(&p_value * &v_bars)) ||
+        &p_value  ||
+       -- draw the whole graph, then cut off the amount we drew before the # of cores
+           substr(
+         rpad('+',round((cpu*&v_bars)/&v_secs),'+') ||
+             rpad('o',round((io*&v_bars)/&v_secs),'o')  ||
+             rpad('-',round((waits*&v_bars)/&v_secs),'-')  ||
+             rpad(' ',&p_value * &v_bars,' '),(&p_value * &v_bars),( &v_graph-&v_bars*&p_value) )
+        ,0,&v_graph)
+        graph
+     --  spct,
+     --  decode(spct,null,null,second) second,
+     --  tpct,
+     --  decode(tpct,null,null,third) third
+from (
+select start_time
+     , max(samples) samples
+     , sum(top.total) total
+     , round(max(decode(top.seq,1,pct,null)),2) fpct
+     , substr(max(decode(top.seq,1,decode(top.event,'ON CPU','CPU',event),null)),0,15) first
+     , round(max(decode(top.seq,2,pct,null)),2) spct
+     , substr(max(decode(top.seq,2,decode(top.event,'ON CPU','CPU',event),null)),0,15) second
+     , round(max(decode(top.seq,3,pct,null)),2) tpct
+     , substr(max(decode(top.seq,3,decode(top.event,'ON CPU','CPU',event),null)),0,10) third
+     , sum(waits) waits
+     , sum(io) io
+     , sum(cpu) cpu
+from (
+  select
+       to_date(tday||' '||tmod*&v_secs,'YYMMDD SSSSS') start_time
+     , event
+     , total
+     , row_number() over ( partition by id order by total desc ) seq
+     , ratio_to_report( sum(total)) over ( partition by id ) pct
+     , max(samples) samples
+     , sum(decode(event,'ON CPU',total,0))    cpu
+     , sum(decode(event,'ON CPU',0,
+                        'db file sequential read',0,
+                        'db file scattered read',0,
+                        'db file parallel read',0,
+                        'direct path read',0,
+                        'direct path read temp',0,
+                        'direct path write',0,
+                        'direct path write temp',0, total)) waits
+     , sum(decode(event,'db file sequential read',total,
+                                  'db file scattered read',total,
+                                  'db file parallel read',total,
+                                  'direct path read',total,
+                                  'direct path read temp',total,
+                                  'direct path write',total,
+                                  'direct path write temp',total, 0)) io
+  from (
+    select /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYMMDD')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYMMDD')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+     where
+		 sample_time  between
+			   to_date('03/09/2021 10:50', 'dd/mm/yyyy hh24:mi') and
+			   to_date('03/09/2021 11:40', 'dd/mm/yyyy hh24:mi')
+      and  sql_id='&SQL_ID'
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYMMDD')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+  )  chunks
+  group by id, tday, tmod, event, total
+) top
+group by start_time
+) aveact
+order by start_time
+/
+
+
+
+aveactndp - dba_hist_active_sess_history (input DBID and PROGRAM)
+
+
+Def v_secs=3600 --  bucket size
+Def v_days=1 --  total time analyze
+Def v_bars=5 -- size of one AAS in characters
+Def v_graph=80
+
+col aveact format 999.99
+col graph format a80
+col fpct format 9.99
+col spct format 9.99
+col tpct format 9.99
+col aas format 999.99
+col aas1 format 9.99
+col aas2 format 9.99
+col pct1 format 999
+col pct2 format 999
+col first format  a15
+col second format  a15
+
+Def p_value=4
+
+select to_char(start_time,'DD HH24:MI'),
+       --samples,
+       --total,
+       --waits,
+       --cpu,
+       (total/&v_secs) aas,
+       --round(fpct * (total/&v_secs),2) aas1,
+       fpct*100  pct1,
+       decode(fpct,null,null,first) first,
+       --round(spct * (total/&v_secs),2) aas2,
+       spct*100 pct2,
+       decode(spct,null,null,second) second,
+    -- substr, ie trunc, the whole graph to make sure it doesn't overflow
+        substr(
+       -- substr, ie trunc, the graph below the # of CPU cores line
+           -- draw the whole graph and trunc at # of cores line
+       substr(
+         rpad('+',round((cpu*&v_bars)/&v_secs),'+') ||
+             rpad('o',round((io*&v_bars)/&v_secs),'o')  ||
+             rpad('-',round((waits*&v_bars)/&v_secs),'-')  ||
+             rpad(' ',&p_value * &v_bars,' '),0,(&p_value * &v_bars)) ||
+        &p_value  ||
+       -- draw the whole graph, then cut off the amount we drew before the # of cores
+           substr(
+         rpad('+',round((cpu*&v_bars)/&v_secs),'+') ||
+             rpad('o',round((io*&v_bars)/&v_secs),'o')  ||
+             rpad('-',round((waits*&v_bars)/&v_secs),'-')  ||
+             rpad(' ',&p_value * &v_bars,' '),(&p_value * &v_bars),( &v_graph-&v_bars*&p_value) )
+        ,0,&v_graph)
+        graph
+     --  spct,
+     --  decode(spct,null,null,second) second,
+     --  tpct,
+     --  decode(tpct,null,null,third) third
+from (
+select start_time
+     , max(samples) samples
+     , sum(top.total) total
+     , round(max(decode(top.seq,1,pct,null)),2) fpct
+     , substr(max(decode(top.seq,1,decode(top.event,'ON CPU','CPU',event),null)),0,15) first
+     , round(max(decode(top.seq,2,pct,null)),2) spct
+     , substr(max(decode(top.seq,2,decode(top.event,'ON CPU','CPU',event),null)),0,15) second
+     , round(max(decode(top.seq,3,pct,null)),2) tpct
+     , substr(max(decode(top.seq,3,decode(top.event,'ON CPU','CPU',event),null)),0,10) third
+     , sum(waits) waits
+     , sum(io) io
+     , sum(cpu) cpu
+from (
+  select
+       to_date(tday||' '||tmod*&v_secs,'YYMMDD SSSSS') start_time
+     , event
+     , total
+     , row_number() over ( partition by id order by total desc ) seq
+     , ratio_to_report( sum(total)) over ( partition by id ) pct
+     , max(samples) samples
+     , sum(decode(event,'ON CPU',total,0))    cpu
+     , sum(decode(event,'ON CPU',0,
+                        'db file sequential read',0,
+                        'db file scattered read',0,
+                        'db file parallel read',0,
+                        'direct path read',0,
+                        'direct path read temp',0,
+                        'direct path write',0,
+                        'direct path write temp',0, total)) waits
+     , sum(decode(event,'db file sequential read',total,
+                                  'db file scattered read',total,
+                                  'db file parallel read',total,
+                                  'direct path read',total,
+                                  'direct path read temp',total,
+                                  'direct path write',total,
+                                  'direct path write temp',total, 0)) io
+  from (
+    select  /*+ PARALLEL(ash,15) */
+         to_char(sample_time,'YYMMDD')                      tday
+       , trunc(to_char(sample_time,'SSSSS')/&v_secs)          tmod
+       , to_char(sample_time,'YYMMDD')||trunc(to_char(sample_time,'SSSSS')/&v_secs) id
+       , decode(ash.session_state,'ON CPU','ON CPU',ash.event)     event
+       , sum(decode(session_state,'ON CPU',10,decode(session_type,'BACKGROUND',0,10))) total
+       , (max(sample_id)-min(sample_id)+1)                    samples
+     from
+        dba_hist_active_sess_history ash
+     where
+		 sample_time  between
+			   to_date('03/09/2021 10:50', 'dd/mm/yyyy hh24:mi') and
+			   to_date('03/09/2021 11:40', 'dd/mm/yyyy hh24:mi')
+     group by  trunc(to_char(sample_time,'SSSSS')/&v_secs)
+            ,  to_char(sample_time,'YYMMDD')
+            ,  decode(ash.session_state,'ON CPU','ON CPU',ash.event)
+  )  chunks
+  group by id, tday, tmod, event, total
+) top
+group by start_time
+) aveact
+order by start_time
+/
+
+
+top SQL for DBID
+col type for a10
+col "CPU" for 999999.9
+col "IO" for 999999.9
+select * from (
+select /*+ PARALLEL(ash,15) */
+     ash.SQL_ID , ash.SQL_PLAN_HASH_VALUE Plan_hash, aud.name type,
+     sum(decode(ash.session_state,'ON CPU',1,0))     "CPU",
+     sum(decode(ash.session_state,'WAITING',1,0))    -
+     sum(decode(ash.session_state,'WAITING', decode(wait_class, 'User I/O',1,0),0))    "WAIT" ,
+     sum(decode(ash.session_state,'WAITING', decode(wait_class, 'User I/O',1,0),0))    "IO" ,
+     sum(decode(ash.session_state,'ON CPU',1,1))     "TOTAL"
+from dba_hist_active_sess_history ash,
+     audit_actions aud
+where SQL_ID is not NULL
+   and ash.sql_opcode=aud.action
+		and sample_time  between
+			   to_date('11/12/2021 20:20', 'dd/mm/yyyy hh24:mi') and
+			   to_date('30/11/2021 15:40', 'dd/mm/yyyy hh24:mi')
+group by sql_id, SQL_PLAN_HASH_VALUE   , aud.name
+order by sum(decode(session_state,'ON CPU',1,1))   desc
+) 
+where  rownum < 10
+/
+
+
+
+
+
+
+TDAY         SQL_ID        EVENT                                                                 TOTAL    SAMPLES
+------------ ------------- ---------------------------------------------------------------- ---------- ----------
+202109031108 4jvt9z863sauc enq: TX - row lock contention                                           120         51
+202109031109 4jvt9z863sauc enq: TX - row lock contention                                           190         51
+202109031109 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031109 cz02gawc9bq0h enq: TX - row lock contention                                           160         51
+202109031110 4jvt9z863sauc enq: TX - row lock contention                                           240         51
+202109031110 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031110 cz02gawc9bq0h enq: TX - row lock contention                                           220         51
+202109031111 2mz81bf0sxnhr enq: TX - row lock contention                                           120         51
+202109031111 4jvt9z863sauc enq: TX - row lock contention                                           270         51
+202109031111 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031111 cz02gawc9bq0h enq: TX - row lock contention                                           200         51
+202109031112 2mz81bf0sxnhr enq: TX - row lock contention                                           120         51
+202109031112 4jvt9z863sauc enq: TX - row lock contention                                           360         51
+202109031112 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031112 8ffqpjqpb00ny enq: TX - row lock contention                                           120         51
+202109031112 cz02gawc9bq0h enq: TX - row lock contention                                           110         51
+202109031113 2mz81bf0sxnhr enq: TX - row lock contention                                           120         51
+202109031113 4jvt9z863sauc enq: TX - row lock contention                                           360         51
+202109031113 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031113 8ffqpjqpb00ny enq: TX - row lock contention                                           120         51
+202109031113 cz02gawc9bq0h enq: TX - row lock contention                                           140         51
+202109031114 4jvt9z863sauc enq: TX - row lock contention                                           370         51
+202109031114 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031114 8ffqpjqpb00ny enq: TX - row lock contention                                           120         51
+202109031114 cz02gawc9bq0h enq: TX - row lock contention                                           230         51
+202109031114               enq: SQ - contention                                                   3890         21
+202109031115 4jvt9z863sauc enq: TX - row lock contention                                           420         51
+202109031115 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031115 8ffqpjqpb00ny enq: TX - row lock contention                                           120         51
+202109031115               enq: SQ - contention                                                  27720         51
+202109031116 4jvt9z863sauc enq: TX - row lock contention                                           320         51
+202109031116 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031116 8ffqpjqpb00ny enq: TX - row lock contention                                           120         51
+202109031116               enq: SQ - contention                                                  58700   18083969
+202109031117 4jvt9z863sauc enq: TX - row lock contention                                           300         51
+202109031117 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031117 8ffqpjqpb00ny enq: TX - row lock contention                                           160         51
+202109031117               enq: SQ - contention                                                  71200   18083969
+202109031118 4jvt9z863sauc enq: TX - row lock contention                                           300         51
+202109031118 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031118 8ffqpjqpb00ny enq: TX - row lock contention                                           360         51
+202109031118               enq: SQ - contention                                                  72220   18083969
+202109031119 4jvt9z863sauc enq: TX - row lock contention                                           300         51
+202109031119 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031119 8ffqpjqpb00ny enq: TX - row lock contention                                           360         51
+202109031119 cz02gawc9bq0h enq: TX - row lock contention                                           100         51
+202109031119               enq: SQ - contention                                                  86440   18083969
+202109031120 4jvt9z863sauc enq: TX - row lock contention                                           300         51
+202109031120 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031120 8ffqpjqpb00ny enq: TX - row lock contention                                           360         51
+202109031120 ccjk7unqhm694 enq: TX - row lock contention                                           110         51
+202109031120               enq: SQ - contention                                                  85820   18083969
+202109031121 4jvt9z863sauc enq: TX - row lock contention                                           300         51
+202109031121 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031121 8ffqpjqpb00ny enq: TX - row lock contention                                           360         51
+202109031121               enq: SQ - contention                                                  79730   18083969
+202109031122 4jvt9z863sauc enq: TX - row lock contention                                           300         51
+202109031122 88k79a7naaxxp enq: TX - row lock contention                                           120         51
+202109031122 8ffqpjqpb00ny enq: TX - row lock contention                                           360         51
+202109031122 gah6vnartmdgm enq: TX - row lock contention                                           250   18083929
+202109031122               enq: SQ - contention                                                  86900   18083969
+202109031123 4jvt9z863sauc enq: TX - row lock contention                                           120         21
+202109031123 8ffqpjqpb00ny enq: TX - row lock contention                                           120         11
+202109031123 gah6vnartmdgm enq: TX - row lock contention                                           280   18083929
+202109031123               enq: SQ - contention                                                  30220   18083929
+
+
+
+
+
+
+
+SELECT sql_id,COUNT(*),ROUND(COUNT(*)/SUM(COUNT(*)) OVER(), 2) PCTLOAD
+FROM DBA_HIST_ACTIVE_SESS_HISTORY
+WHERE sample_time  between
+       to_date('03/09/2021 11:00', 'dd/mm/yyyy hh24:mi') and
+       to_date('03/09/2021 11:30', 'dd/mm/yyyy hh24:mi')
+AND session_type = 'FOREGROUND'
+GROUP BY sql_id
+ORDER BY COUNT(*) DESC;
+
+
+
+
+
+####    @ashtop event2,wait_class,sql_id '1=1 and sql_id=sql_id' "timestamp'2021-11-30 15:30:00'" "timestamp'2021-11-30 15:40:00'"
+####    @ashtop event2,wait_class,sql_id "wait_class='Application'" "timestamp'2021-09-03 14:40:00'" "timestamp'2021-09-03 14:50:00'"
+####    @ashtop username,event2,sql_id,sql_opname,current_obj#,objt "wait_class='Application'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:20:00'"
+####    @ashtop username,event2,sql_id,sql_opname,current_obj#,objt "wait_class='Application'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+
+Application
+
+ ####    @ashtop username,event2,sql_id,sql_opname "1=1" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+ ####    @ashtop event2,wait_class,sql_id '1=1 and sql_id=sql_id' "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+
+11:15
+11:24
+
+####    @ashtop event2,sql_id,sql_opname,current_obj#,objt "username=username" "timestamp'2021-09-03 09:00:00'" "timestamp'2021-09-03 12:30:00'"
+####    @ashtop username,event2,wait_class,sql_id,sql_opname "username=username" "timestamp'2021-09-03 10:40:00'" "timestamp'2021-09-03 11:30:00'"
+--ESSE AQUI
+####    @ashtop username,event2,sql_id,sql_opname,current_obj#,objt "wait_class='Application'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+
+
+SELECT distinct a.sql_id,
+                a.blocking_session,
+                a.blocking_session_serial#,
+                a.user_id,
+               -- s.sql_text,
+                a.module
+  FROM sys.WRH$_ACTIVE_SESSION_HISTORY a, v$sql s
+ where a.sample_time between
+       to_date('03/09/2021 11:00', 'dd/mm/yyyy hh24:mi') and
+       to_date('03/09/2021 11:30', 'dd/mm/yyyy hh24:mi')
+/	
+
+
+ select min(sample_time) FROM  sys.WRH$_ACTIVE_SESSION_HISTORY;
+
+SELECT distinct a.sql_id,
+                a.blocking_session,
+                a.blocking_session_serial#,
+                a.user_id,
+               -- s.sql_text,
+                a.module
+  FROM V$ACTIVE_SESSION_HISTORY a, v$sql s
+ where a.sql_id = s.sql_id
+   and blocking_session is not null
+   and a.user_id <> 0
+   and a.sample_time between
+       to_date('03/09/2021 11:00', 'dd/mm/yyyy hh24:mi') and
+       to_date('03/09/2021 11:30', 'dd/mm/yyyy hh24:mi')
+/	   
+
+Sql Id specified: gah6vnartmdgm
+
+Tune the sql
+~~~~~~~~~~~~
+
+GENERAL INFORMATION SECTION
+-------------------------------------------------------------------------------
+Tuning Task Name   : TASK_13998976
+Tuning Task Owner  : SYS
+Workload Type      : Single SQL Statement
+Scope              : COMPREHENSIVE
+Time Limit(seconds): 1800
+Completion Status  : COMPLETED
+Started at         : 09/03/2021 16:18:23
+Completed at       : 09/03/2021 16:18:33
+
+-------------------------------------------------------------------------------
+Schema Name: SYSAI
+SQL ID     : gah6vnartmdgm
+SQL Text   : SELECT CS.YEAR, CS.CURRENT_ID, CS.INCREMENT_TYPE FROM
+             AI_CORPORATION_SEQUENCE CS WHERE CS.ID_CORPORATION =:B2 AND
+             CS.ID_TYPE =:B1 FOR UPDATE
+Bind Variables :
+ 1 -  (NUMBER):8
+ 2 -  (NUMBER):6
+
+-------------------------------------------------------------------------------
+
+
+SET DEFINE OFF
+PROMPT ===========================================================================================================================================
+PROMPT ASHTOP HELP >>  V$ACTIVE_SESSION_HISTORY
+PROMPT ===========================================================================================================================================
+PROMPT ** ####    @ashtopc   ##SETA VARIAVEIS OBRIGATORIAS##
+PROMPT ===========================================================================================================================================
+PROMPT **         +++++++++++++++++  +++++++++++++++++++++  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PROMPT **         +    COLUMNS    +  +       FILTER      +  +                          TIME RANGE                           +
+PROMPT **         +++++++++++++++++  +++++++++++++++++++++  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PROMPT ** ####    @ashtop event2,wait_class,sql_id '1=1 and sql_id=sql_id' "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:20:00'"
+
+
+ ####    @ashtop username,event2,wait_class,sql_id "'wait_class='Concurrency' and sql_id=sql_id'"          "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+ ####    @ashtop username,event2,sql_id,sql_opname "1=1" "timestamp'2021-09-03 10:50:00'" "timestamp'2021-09-03 11:30:00'"
+  ####    @ashtop username,event2,sql_id,sql_opname,current_obj#,objt "wait_class='Application'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:20:00'"
+ 
+ 
+  ####    @ashtop event2,sql_id,sql_opname,current_obj#,objt "username=username" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+ 
+ 
+ 
+ ####    @ashtop event2,sql_id,sql_opname,current_obj#,objt "session_id=session_id and username='FPS_URA'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:20:00'"
+ 
+ ####    @ashtop event2,sql_id,sql_opname,current_obj#,objt "session_id=session_id and username='FPS_URA'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:20:00'"
+ 
+ 
+ 
+
+####    @ashtop event2,wait_class,sql_id '1=1 AND sql_id='dx4nqvbtu06bx'" sql_id=sql_id' "timestamp'2021-09-03 10:00:00'" "timestamp'2021-09-03 11:20:00'"
+####    @ashtop username,event2,sql_id,sql_opname "wait_class='Concurrency'"  "timestamp'2021-09-03 10:00:00'" "timestamp'2021-09-03 11:20:00'"
+
+
+select * from v$lock_type a where a.TYPE in ('SQ','SV')
+
+select count(*),sum(time_waited), SQL_ID
+from v$active_session_history
+where event='enq: SQ - contention' and
+to_char(SAMPLE_TIME,'DDMMYYYY HH24:MI')>='03092021 11:00'
+and to_char(SAMPLE_TIME,'DDMMYYYY HH24:MI')<'03092021 11:30'
+group by SQL_ID
+/
+
+
+select sh.sql_id,to_char(st.sql_text),count(*)
+from dba_hist_active_sess_history sh
+join dba_hist_sqltext st
+ on sh.sql_id=st.sql_id
+where st.sql_text like '%NEXTVAL%'
+ and (event='row cache lock' or event like 'gc current block %-way')
+ and to_char(SAMPLE_TIME,'DDMMYYYY HH24:MI')>='03092021 11:00'
+and to_char(SAMPLE_TIME,'DDMMYYYY HH24:MI')<'03092021 11:30'
+group by sh.sql_id,to_char(st.sql_text)
+order by count(*) desc;
+
+12:52:25 lnxorasp10:PBACK\sys = OPEN >  ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+
+    Total|       |       |             |       |                                        |                   |                    |                    |
+  Seconds|    AAS|%This  |SQL_ID       |SESSION|EVENT                                   |SQL_PLAN_HASH_VALUE|FIRST_SEEN          |LAST_SEEN           |DIST_SQLEXEC_SEEN
+---------|-------|-------|-------------|-------|----------------------------------------|-------------------|--------------------|--------------------|-----------------
+   475764|  264.3|  67% ||             |WAITING|enq: SQ - contention                    |                  0|2021-09-03 11:16:34 |2021-09-03 11:23:24 |                1
+    41413|   23.0|   6% ||gn0tnypg4b5u9|WAITING|cursor: pin S wait on X                 |         2536993146|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+    29944|   16.6|   4% ||5ur69atw3vfhj|WAITING|library cache lock                      |          395742348|2021-09-03 11:20:10 |2021-09-03 11:23:23 |                1
+    15282|    8.5|   2% ||avfzwhgz8sd0r|WAITING|cursor: pin S wait on X                 |         1888588631|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+    14120|    7.8|   2% ||5ur69atw3vfhj|WAITING|cursor: pin S wait on X                 |                  0|2021-09-03 11:18:49 |2021-09-03 11:20:38 |                1
+    11656|    6.5|   2% ||             |WAITING|library cache load lock                 |                  0|2021-09-03 11:18:49 |2021-09-03 11:23:23 |                1
+    11320|    6.3|   2% ||91kpq9ffjhzcr|WAITING|cursor: pin S wait on X                 |         1560452987|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+     9916|    5.5|   1% ||5ur69atw3vfhj|WAITING|cursor: pin S wait on X                 |          395742348|2021-09-03 11:18:49 |2021-09-03 11:23:23 |                1
+     4797|    2.7|   1% ||22z51svt1th2g|ON CPU |                                        |         1542180071|2021-09-03 11:16:34 |2021-09-03 11:29:59 |                9
+     4787|    2.7|   1% ||5ur69atw3vfhj|WAITING|library cache lock                      |                  0|2021-09-03 11:20:10 |2021-09-03 11:22:10 |                1
+     4580|    2.5|   1% ||byh546b9t1unw|WAITING|cursor: pin S wait on X                 |                  0|2021-09-03 11:18:49 |2021-09-03 11:22:39 |                1
+     3467|    1.9|   0% ||br9pqk1kh2n0w|WAITING|cursor: pin S wait on X                 |         1102809069|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+     2645|    1.5|   0% ||5btqcn1a6y7jf|WAITING|cursor: pin S wait on X                 |         1447978324|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+     2428|    1.3|   0% ||brw22gckbd62p|WAITING|cursor: pin S wait on X                 |         3851039897|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+     2408|    1.3|   0% ||             |ON CPU |                                        |                  0|2021-09-03 11:16:34 |2021-09-03 11:29:59 |                1
+     2290|    1.3|   0% ||2r7qb843zd5a0|WAITING|library cache load lock                 |                  0|2021-09-03 11:18:49 |2021-09-03 11:22:39 |               10
+     2145|    1.2|   0% ||8ffqpjqpb00ny|WAITING|enq: TX - row lock contention           |         1309124785|2021-09-03 11:16:34 |2021-09-03 11:23:25 |                6
+     2116|    1.2|   0% ||0qz9kwpgmm2a2|WAITING|cursor: pin S wait on X                 |         1446473419|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+     2058|    1.1|   0% ||4jvt9z863sauc|WAITING|enq: TX - row lock contention           |         3409043837|2021-09-03 11:16:34 |2021-09-03 11:23:30 |                5
+     1895|    1.1|   0% ||gyvbyqxz08hy2|WAITING|cursor: pin S wait on X                 |         1470391891|2021-09-03 11:18:49 |2021-09-03 11:23:24 |                1
+
+
+
+PROMPT ===========================================================================================================================================
+PROMPT ** ####    @ash/ashtop &s &cpu &h
+PROMPT ** ####    @ashtop &s &cpu &hour
+PROMPT ** ####    @ashtop event "sql_id=dx4nqvbtu06bx'" &hour
+PROMPT ** ####    @ashtop session_state,event "1=1 AND sql_id='dx4nqvbtu06bx'" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+PROMPT ** ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND 2=2" "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+PROMPT ** ####    @ashtop sql_id,session_state,event,sql_plan_hash_value "1=1 AND session_id=104" "timestamp'2021-07-21 06:00:00'" "timestamp'2021-07-21 16:00:00'"
+PROMPT ** ####    @ashtop session_state,event,p2text,p2,p3text,p3 "1=1 AND sql_id='dx4nqvbtu06bx'" "timestamp'2021-07-21 06:00:00'" "timestamp'2021-07-21 16:00:00'"
+PROMPT ** ####    @ashtop username,event2,sql_id,sql_opname "wait_class='Concurrency'" "timestamp'2021-07-21 06:00:00'" "timestamp'2021-07-21 16:00:00'"
+PROMPT ** ####    @ashtop session_id,event2 "sql_id='dx4nqvbtu06bx'" "timestamp'2021-07-21 06:00:00'" "timestamp'2021-07-21 16:00:00'"
+PROMPT ** ####    @ashtop session_id,event2 "sql_id='dx4nqvbtu06bx'" "timestamp'2021-07-21 06:00:00'" "timestamp'2021-07-21 16:00:00'"
+PROMPT ** ####    @ashtop event2,sql_id,sql_opname,current_obj#,objt "session_id=session_id and username='FPS_BO'" "timestamp'2021-07-21 06:00:00'" "timestamp'2021-07-21 16:00:00'"
+PROMPT =======================================================================================================
+PROMPT EVENT_HIST HELP
+PROMPT =======================================================================================================
+PROMPT ** ####    @event_count_10g.sql  or  ####    @event_count_11g.sql  or  ####    @event_count_12c.sql
+PROMPT ** ####    @event_hist "<name_event>" 1=1 &h
+PROMPT =======================================================================================================
+SET DEFINE ON
+
+
+####    @ashtop event2,wait_class '1=1 and sql_id=sql_id' "timestamp'2021-09-03 11:00:00'" "timestamp'2021-09-03 11:30:00'"
+  Total|       |       |                                        |               |                    |                    |
+Seconds|    AAS|%This  |EVENT2                                  |WAIT_CLASS     |FIRST_SEEN          |LAST_SEEN           |DIST_SQLEXEC_SEEN
+-------|-------|-------|----------------------------------------|---------------|--------------------|--------------------|-----------------
+  31723|   26.4|  57% ||db file sequential read                 |User I/O       |2021-07-28 11:10:00 |2021-07-28 11:29:59 |            20860
+  13630|   11.4|  25% ||ON CPU                                  |               |2021-07-28 11:10:00 |2021-07-28 11:29:59 |             6882
+   3686|    3.1|   7% ||SQL*Net message from dblink             |Network        |2021-07-28 11:10:00 |2021-07-28 11:29:59 |             3625
+   1577|    1.3|   3% ||read by other session                   |User I/O       |2021-07-28 11:10:00 |2021-07-28 11:29:42 |               85
+    979|     .8|   2% ||gc buffer busy acquire [undo data]      |Cluster        |2021-07-28 11:12:05 |2021-07-28 11:29:59 |                5
+    895|     .7|   2% ||direct path read temp                   |User I/O       |2021-07-28 11:10:00 |2021-07-28 11:29:59 |               12
+    326|     .3|   1% ||direct path write temp                  |User I/O       |2021-07-28 11:10:02 |2021-07-28 11:28:50 |               12
+    260|     .2|   0% ||enq: TX - row lock contention           |Application    |2021-07-28 11:10:45 |2021-07-28 11:29:39 |               58
+    241|     .2|   0% ||db file parallel read                   |User I/O       |2021-07-28 11:10:01 |2021-07-28 11:29:50 |              180
+    205|     .2|   0% ||gc current block 2-way                  |Cluster        |2021-07-28 11:10:08 |2021-07-28 11:29:52 |              170
+    152|     .1|   0% ||gc cr disk read                         |Cluster        |2021-07-28 11:11:08 |2021-07-28 11:29:59 |                6
+    148|     .1|   0% ||db file scattered read                  |User I/O       |2021-07-28 11:10:32 |2021-07-28 11:29:59 |                9
+    138|     .1|   0% ||gc cr block 2-way                       |Cluster        |2021-07-28 11:10:44 |2021-07-28 11:29:46 |               87
+    115|     .1|   0% ||gc cr request                           |Cluster        |2021-07-28 11:10:11 |2021-07-28 11:29:43 |              115
+    101|     .1|   0% ||gc remaster                             |Cluster        |2021-07-28 11:10:47 |2021-07-28 11:20:57 |               66
+    101|     .1|   0% ||gcs drm freeze in enter server mode     |Other          |2021-07-28 11:10:48 |2021-07-28 11:20:58 |              101
+     92|     .1|   0% ||control file sequential read            |System I/O     |2021-07-28 11:10:19 |2021-07-28 11:29:59 |               31
+     89|     .1|   0% ||enq: IV -  contention                   |Other          |2021-07-28 11:10:18 |2021-07-28 11:29:44 |               52
+     85|     .1|   0% ||gc buffer busy acquire [data block]     |Cluster        |2021-07-28 11:10:43 |2021-07-28 11:29:58 |               22
+     71|     .1|   0% ||gc cr block busy                        |Cluster        |2021-07-28 11:10:00 |2021-07-28 11:28:50 |               70
+:18:55 lnxorasp10:PBACK\sys = OPEN >
+
+####    @ashtop event2,wait_class,sql_id '1=1 and sql_id=sql_id' "timestamp'2021-07-28 11:10:00'" "timestamp'2021-07-28 11:20:00'"
+####    @ashtop event2,wait_class,sql_id '1=1 and sql_id=sql_id' "timestamp'2021-11-30 15:20:00'" "timestamp'2021-11-30 15:40:00'"
+    Total|       |       |                                        |               |             |                    |                    |
+  Seconds|    AAS|%This  |EVENT2                                  |WAIT_CLASS     |SQL_ID       |FIRST_SEEN          |LAST_SEEN           |DIST_SQLEXEC_SEEN
+---------|-------|-------|----------------------------------------|---------------|-------------|--------------------|--------------------|-----------------
+     8720|    7.3|  16% ||db file sequential read                 |User I/O       |3f4h2y7dc9x8q|2021-07-28 11:10:00 |2021-07-28 11:29:59 |             8658
+     3892|    3.2|   7% ||db file sequential read                 |User I/O       |8hxhavmmcpc2r|2021-07-28 11:10:00 |2021-07-28 11:29:59 |             3891
+     2413|    2.0|   4% ||ON CPU                                  |               |3hq6bj5yqhc1r|2021-07-28 11:10:00 |2021-07-28 11:29:59 |                3
+     1559|    1.3|   3% ||db file sequential read                 |User I/O       |a89p0sfb8r2kv|2021-07-28 11:10:03 |2021-07-28 11:29:59 |              282
+     1374|    1.1|   2% ||read by other session                   |User I/O       |b3s0dz91zugnu|2021-07-28 11:10:00 |2021-07-28 11:29:42 |                3
+     1189|    1.0|   2% ||ON CPU                                  |               |c8ztgfxxzu1gk|2021-07-28 11:10:00 |2021-07-28 11:29:57 |              174
+     1152|    1.0|   2% ||db file sequential read                 |User I/O       |grdg4syufksz0|2021-07-28 11:10:00 |2021-07-28 11:29:59 |                1
+     1074|     .9|   2% ||db file sequential read                 |User I/O       |b3s0dz91zugnu|2021-07-28 11:10:02 |2021-07-28 11:29:58 |                3
+     1069|     .9|   2% ||SQL*Net message from dblink             |Network        |2zwh3q9vb49c3|2021-07-28 11:10:00 |2021-07-28 11:29:59 |             1068
+     1022|     .9|   2% ||ON CPU                                  |               |b9asf131qkmsy|2021-07-28 11:10:00 |2021-07-28 11:29:58 |              986
+      987|     .8|   2% ||db file sequential read                 |User I/O       |7z3kqff0xq84m|2021-07-28 11:10:09 |2021-07-28 11:29:59 |                1
+      981|     .8|   2% ||db file sequential read                 |User I/O       |3hq6bj5yqhc1r|2021-07-28 11:10:00 |2021-07-28 11:29:59 |                3
+      975|     .8|   2% ||gc buffer busy acquire [undo data]      |Cluster        |b3s0dz91zugnu|2021-07-28 11:12:05 |2021-07-28 11:29:59 |                3
+      910|     .8|   2% ||SQL*Net message from dblink             |Network        |4mjf236748wd6|2021-07-28 11:10:09 |2021-07-28 11:29:58 |              910
+      793|     .7|   1% ||db file sequential read                 |User I/O       |27nyrsf9zqaaz|2021-07-28 11:10:00 |2021-07-28 11:29:59 |                2
+      669|     .6|   1% ||db file sequential read                 |User I/O       |5mx4y35grmcpa|2021-07-28 11:10:01 |2021-07-28 11:29:56 |              669
+      604|     .5|   1% ||db file sequential read                 |User I/O       |020dm5u2512uf|2021-07-28 11:10:02 |2021-07-28 11:28:18 |                1
+      547|     .5|   1% ||ON CPU                                  |               |6f3rqwftdnxc9|2021-07-28 11:10:02 |2021-07-28 11:29:58 |              383
+      536|     .4|   1% ||direct path read temp                   |User I/O       |4s9t42ybqnm1j|2021-07-28 11:10:18 |2021-07-28 11:29:59 |                7
+      522|     .4|   1% ||db file sequential read                 |User I/O       |dns9pjmad9mkp|2021-07-28 11:10:01 |2021-07-28 11:29:43 |              522
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class='Concurrency'" "timestamp'2021-07-28 11:20:00'" "timestamp'2021-07-28 11:30:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class='Concurrency'" "timestamp'2021-07-28 11:30:00'" "timestamp'2021-07-28 11:40:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class=wait_class" "timestamp'2021-07-28 11:40:00'" "timestamp'2021-07-28 11:50:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class='Concurrency'" "timestamp'2021-07-28 11:50:00'" "timestamp'2021-07-28 12:00:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class='Concurrency'" "timestamp'2021-07-28 12:00:00'" "timestamp'2021-07-28 12:10:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class=wait_class"  "timestamp'2021-07-28 12:10:00'" "timestamp'2021-07-28 12:20:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class=wait_class" "timestamp'2021-07-28 12:30:00'" "timestamp'2021-07-28 12:40:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname "wait_class=wait_class" "timestamp'2021-07-28 11:50:00'" "timestamp'2021-07-28 12:00:00'"
+####    @ashtop username,event2,sql_id,sql_opname "wait_class=wait_class" "timestamp'2021-07-28 19:14:00'" "timestamp'2021-07-28 19:15:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname,wait_class "wait_class=wait_class" "timestamp'2021-07-28 19:14:00'" "timestamp'2021-07-28 19:15:00'"
+
+####    @ashtop username,event2,sql_id,sql_opname,wait_class "wait_class in('Cluster', 'Network', 'Concurrency')" "timestamp'2021-07-28 19:10:00'" "timestamp'2021-07-28 19:20:00'"
+
+
+			   to_date('11/12/2021 20:20','dd/mm/yyyy hh24:mi') and
+			   to_date('30/11/2021 15:45','dd/mm/yyyy hh24:mi')
+
+SELECT sql_id, SQL_PLAN_HASH_VALUE, SQL_PLAN_LINE_ID,event, COUNT (*) cnt
+FROM dba_hist_active_sess_history h
+WHERE  sample_time BETWEEN TIMESTAMP '2021-07-28  19:14:00' AND TIMESTAMP '2021-07-28  19:15:00'
+  AND wait_class = 'Cluster' --
+ -- and  like 'gc%'
+GROUP BY sql_id, SQL_PLAN_HASH_VALUE, SQL_PLAN_LINE_ID,event
+ORDER BY cnt DESC;
+12:28:32 lnxorasp10:PBACK\sys = OPEN >

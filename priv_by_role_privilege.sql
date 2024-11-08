@@ -1,0 +1,41 @@
+--
+PROMPT 
+ACCEPT role_name CHAR  PROMPT 'Enter role name : '
+
+SET ECHO        OFF
+SET FEEDBACK    6
+SET HEADING     ON
+SET LINESIZE    180
+SET PAGESIZE    50000
+SET TERMOUT     ON
+SET TIMING      OFF
+SET TRIMOUT     ON
+SET TRIMSPOOL   ON
+SET VERIFY      OFF
+
+CLEAR COLUMNS
+CLEAR BREAKS
+CLEAR COMPUTES
+
+COLUMN OWNER         FORMAT a30
+COLUMN GRANTEE       FORMAT a30
+COLUMN GRANTED_ROLE  FORMAT a20
+COLUMN ADMIN_OPTION  FORMAT a20
+COLUMN DEFAULT_ROLE  FORMAT a20
+COLUMN PRIVILEGE     FORMAT a30
+COLUMN TABLE_NAME    FORMAT a50
+
+
+select GRANTEE, GRANTED_ROLE, ADMIN_OPTION, DEFAULT_ROLE
+from   dba_role_privs rp
+where  rp.grantee = '&role_name'
+/
+select GRANTEE, PRIVILEGE, ADMIN_OPTION
+from   dba_sys_privs sp
+where  sp.grantee = '&role_name'
+/
+select GRANTEE, PRIVILEGE, OWNER, TABLE_NAME
+from   dba_tab_privs tp
+where  tp.grantee = '&role_name'
+order by OWNER, TABLE_NAME
+/

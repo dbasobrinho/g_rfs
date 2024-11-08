@@ -1,0 +1,36 @@
+[hhsobri@COLDP01 ~]$ xauth list
+COLDP01.abc.corp.wonka.com/unix:12 MIT-MAGIC-COOKIE-1 4c1d513f56e9872339848a47b6d98f74
+COLDP01.abc.corp.wonka.com/unix:11 MIT-MAGIC-COOKIE-1 55f776f7af57a9474570a28ef8546b1a
+COLDP01.abc.corp.wonka.com/unix:10 MIT-MAGIC-COOKIE-1 740587c514ff2f7ec0a2370408915977
+[hhsobri@COLDP01 ~]$ env | grep DISPLAY
+DISPLAY=localhost:10.0 
+[hhsobri@COLDP01 ~]$ sudo su - oracle
+Last login: Tue Mar 22 11:42:55 -05 2022 on pts/0
+[oracle@COLDP01 ~]$
+[oracle@COLDP01 ~]$
+[oracle@COLDP01 ~]$
+[oracle@COLDP01 ~]$ xauth add COLDP01.abc.corp.wonka.com/unix:10 MIT-MAGIC-COOKIE-1 740587c514ff2f7ec0a2370408915977
+xauth: file /oracle/EVECOQA/.Xauthority does not exist
+##
+[oracle@COLDP01 ~]$ export DISPLAY=10.1.239.94:1.0
+[oracle@COLDP01 ~]$
+[oracle@COLDP01 ~]$
+[oracle@COLDP01 ~]$ xclock &
+
+--------------
+======= Instalar com o root: yum install  xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps -y
+======= Verificar variavel usada no usuario OPC $DISPLAY
+[opc@instance-20220623-0712 ~]$ echo $DISPLAY
+localhost:11.0
+
+======= Copiar .Xauthority do usuario opc para usuario oracle
+[opc@instance-20220623-0712 ~]$ sudo -i
+[root@instance-20220623-0712 ~]# cd /home/opc/
+[root@instance-20220623-0712 opc]# cp .Xauthority /home/oracle/
+[root@instance-20220623-0712 opc]# cd /home/oracle/
+[root@instance-20220623-0712 oracle]# chown oracle:oinstall .Xauthority
+
+======= mudar para usuario oracle e testar o X11
+[root@instance-20220623-0712 ~]# su - oracle
+[oracle@instance-20220623-0712 ~]$ DISPLAY=localhost:11.0; export DISPLAY
+[oracle@instance-20220623-0712 ~]$ xclock

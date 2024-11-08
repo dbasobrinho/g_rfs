@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="https://exa3db02-ilom.geq.com.br:443/">
+     <information>
+        <title>Remote System Console Plus</title>
+        <vendor>Oracle America, Inc.</vendor>
+        <description kind="one-line">Remote Console Redirection Application</description>
+        <description kind="tooltip">Remote Console Redirection Application</description>
+        <description kind="short">
+            Remote Console enables a user to view the video display of an
+            ILOM computer equipped with a service processor. It also enables
+            the user to redirect the local keyboard, mouse, CD-ROM and floppy drives to
+            the remote computer to allow for complete control over the remote machine.
+        </description>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.7.0_131+" href="http://java.sun.com/products/autodl/j2se"/>
+        <j2se version="1.8+"/>
+        <jar href="Java/M2.JAR"/>
+        <property name="sun.java2d.d3d" value="false"/>
+    </resources>
+    <application-desc>
+        <argument>video</argument>
+        <argument>80</argument>
+        <argument>443</argument>
+        <argument>https</argument>
+        <argument>443</argument>
+                <argument>exa3db02-ilom.geq.com.br</argument>
+        <argument>root-sp-6</argument>
+        <argument>INOSNNDuOjxjVj</argument>
+        <argument>2c:5e:3a:42:2c:93:fc:77:80:75:5c:e2:e3:5d:ad:76:9f:78:4d:a5:d4:86:9a:f9:e5:cd:d0:bf:f2:3d:3b:1e</argument>
+        <argument>-----BEGIN CERTIFICATE-----
+MIIFEjCCA3qgAwIBAgIJAMoeZhx48vqmMA0GCSqGSIb3DQEBCwUAMIGgMQswCQYD
+VQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEXMBUGA1UEBwwOUmVkd29vZCBT
+aG9yZXMxHDAaBgNVBAoME09yYWNsZSBBbWVyaWNhLCBJbmMxLTArBgNVBAsMJE9y
+YWNsZSBJbnRlZ3JhdGVkIExpZ2h0cyBPdXQgTWFuYWdlcjEWMBQGA1UEAwwNZXhh
+M2RiMDItaWxvbTAeFw0xODAxMjExMzMwNDNaFw0yMTA0MjIxMzMwNDNaMIGgMQsw
+CQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEXMBUGA1UEBwwOUmVkd29v
+ZCBTaG9yZXMxHDAaBgNVBAoME09yYWNsZSBBbWVyaWNhLCBJbmMxLTArBgNVBAsM
+JE9yYWNsZSBJbnRlZ3JhdGVkIExpZ2h0cyBPdXQgTWFuYWdlcjEWMBQGA1UEAwwN
+ZXhhM2RiMDItaWxvbTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBALTg
+oAff+kVtA73KPQJwroxJe6gklf+EafRY2kANTjPPuPPdhu+2/pnMqXh8NTaCh6JR
+tuA0rOr6CWPstV6P/C6aId3NQ9U10xJqLyENhJC8Ayyv0KHTY3qQZVx36tNZcaHc
+emyw7cAofGbIzFRp790yJEyKLM6Z7KJlcXnLGxt2wNxkgCAnF62d41i5GuMobvqB
+3zUsSwidMViw89vkj6am74lt/olH+qnehFJIFzHlDy1T2vphL62lT1KQCcnkHaxX
+UnntL6rS114oeaXuHzz6SkAWBvX3P3o4UE7ogOea/zoZvpjaVAasfKWmmPgbno4I
+YYpOnnv3EqcgsSJuxrr0V8kMlF7+DnTcpk69rY/3tYtWp4Pl6axED9oFb63qP03T
+bhUJZrqSbcUPRgIfEnRg2WszfQMZb8bqTrfMxdMnnmOzGRc8oplMCT8wSmKo6Cc8
+19JNL2Cr5gdRaKGARE/iNyJ+qMyJUHdnhvtAVdvfKI9MwwEZRz1yjRT+8HHFJwID
+AQABo00wSzAdBgNVHQ4EFgQUSsA4TinKVDZJoeC9tYBe8Sl6BvwwHwYDVR0jBBgw
+FoAUSsA4TinKVDZJoeC9tYBe8Sl6BvwwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsF
+AAOCAYEAZagJ/uet7rsG5HJGbrcYPwpJ8qTQSk98IvjKeT9UYFKQomPBb/S0xbRe
+XqSyOn1Hunp4dtCJl0wykAdBgrphEJSwrofjzl6TMoBmedsRXFWLd0ShmVoXpJZq
+iUr7nHqPMmylK546vbrIH5VJ/sFORYJyGznIBa8tEpi3fjQi09BclFqe4Sg0ofFO
+TM8AjHQnASFfP1J/KMMM84UhezGVlVVmKToifRx4Oillg1YqLed3o2LWIO9mmndu
+YRdugWCLVgEDuOaGuAVuwGkiVtU6L9P/21Bx8fTqRhVJSGwTRwaoYH4R82cBB1Ci
+qBcdkNv5QedFfj7JGgcrcOnciwotLJIUpe9flGD1RWdMZGsNmOsDM9Ofm2jZdkQn
+uR5ml/5pn3H/Lc6lh70GbFl9r17jb1Eq9/jtPDjLECC6JIFinpr1GGM748Qkmf4r
+nWHG1BWO1KBOLvIiCd36e8S6vqGXLL/B8pvhhgWISPaqxwDwlzu4i4v6+cPPmERq
+jDBc6Ukr
+-----END CERTIFICATE-----
+</argument>
+
+    </application-desc>
+</jnlp>

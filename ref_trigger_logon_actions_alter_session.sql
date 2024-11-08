@@ -1,0 +1,20 @@
+CREATE OR REPLACE TRIGGER logon_actions
+AFTER LOGON
+ON DATABASE
+ENABLE
+BEGIN
+    EXECUTE IMMEDIATE 
+    'ALTER SESSION SET STATISTICS_LEVEL = all';
+END;
+/
+
+DECLARE
+    v_loglevel VARCHAR2(100);
+BEGIN
+    v_loglevel := logger_package.loglevel;
+ 
+    IF v_loglevel = 'DEBUG' THEN
+        EXECUTE IMMEDIATE 
+        'ALTER SESSION SET STATISTICS_LEVEL = all';
+    END IF;
+END;

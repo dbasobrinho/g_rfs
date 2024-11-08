@@ -1,0 +1,157 @@
+===============================================================================================================
+cd /u01/app/oracle.ahf/bin
+tfactl print config |grep manageLogsAutoPurge
+tfactl set manageLogsAutoPurge=ON -c
+tfactl set manageLogsAutoPurgePolicyAge=30d -c  
+tfactl set manageLogsAutoPurgeInterval=90 -c
+===============================================================================================================
+Referencia : ref_TFA_ORACHECK_AFH_INSTALL_USE_RFS.txt
+Assunto    : Instalando e usando o AHF
+Criado por : Roberto Fernandes Sobrinho 
+Data       : 27/07/2021
+Ref        :
+Cenario    : 
+           : 
+===============================================================================================================
+01. USAR UM LOCAL PADRAO E DE PREFERENCIA FORA DO ORACLE_HOME
+===============================================================================================================
+[root@lnxorarjh05] [~] # mkdir -p /backup/AHF
+===============================================================================================================
+02. FAZENDO A INSTALACAO
+===============================================================================================================
+[root@lnxorarjh05] [/nfs_refresh/AFH] # ./ahf_setup
+	AHF Installer for Platform Linux Architecture x86_64
+	AHF Installation Log : /tmp/ahf_install_211000_36849_2021_07_27-14_34_01.log
+	Starting Autonomous Health Framework (AHF) Installation
+	AHF Version: 21.1.0 Build Date: 202104131158
+	Default AHF Location : /opt/oracle.ahf
+	Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N : N
+	Please Enter new AHF Location : /backup/AHF
+	AHF Location : /backup/AHF/oracle.ahf
+	AHF Data Directory stores diagnostic collections and metadata.
+	AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
+	Choose Data Directory from below options :
+	1. /u/app/oracle [Free Space : 4970 MB]
+	2. /backup/AHF/oracle.ahf [Free Space : 291726 MB]
+	3. Enter a different Location
+	Choose Option [1 - 3] : 2
+	AHF Data Directory : /backup/AHF/oracle.ahf/data
+	Do you want to add AHF Notification Email IDs ? [Y]|N : N
+	AHF will also be installed/upgraded on these Cluster Nodes :
+	1. lnxorarjh06
+	The AHF Location and AHF Data Directory must exist on the above nodes
+	AHF Location : /backup/AHF/oracle.ahf
+	AHF Data Directory : /backup/AHF/oracle.ahf/data
+	Do you want to install/upgrade AHF on Cluster Nodes ? [Y]|N : Y
+	Extracting AHF to /backup/AHF/oracle.ahf
+	Configuring TFA Services
+	Discovering Nodes and Oracle Resources
+	Not generating certificates as GI discovered
+	Starting TFA Services
+	.--------------------------------------------------------------------------------.
+	| Host        | Status of TFA | PID   | Port | Version    | Build ID             |
+	+-------------+---------------+-------+------+------------+----------------------+
+	| lnxorarjh05 | RUNNING       | 47347 | 5000 | 21.1.0.0.0 | 21100020210413115827 |
+	'-------------+---------------+-------+------+------------+----------------------'
+	Running TFA Inventory...
+	Adding default users to TFA Access list...
+	.----------------------------------------------------------------.
+	|                  Summary of AHF Configuration                  |
+	+-----------------+----------------------------------------------+
+	| Parameter       | Value                                        |
+	+-----------------+----------------------------------------------+
+	| AHF Location    | /backup/AHF/oracle.ahf                       |
+	| TFA Location    | /backup/AHF/oracle.ahf/tfa                   |
+	| Orachk Location | /backup/AHF/oracle.ahf/orachk                |
+	| Data Directory  | /backup/AHF/oracle.ahf/data                  |
+	| Repository      | /backup/AHF/oracle.ahf/data/repository       |
+	| Diag Directory  | /backup/AHF/oracle.ahf/data/lnxorarjh05/diag |
+	'-----------------+----------------------------------------------'
+	Starting orachk scheduler from AHF ...
+	AHF install completed on lnxorarjh05
+	Installing AHF on Remote Nodes :
+	AHF will be installed on lnxorarjh06, Please wait.
+	Installing AHF on lnxorarjh06 :
+	[lnxorarjh06] Copying AHF Installer
+	[lnxorarjh06] Running AHF Installer
+	AHF binaries are available in /backup/AHF/oracle.ahf/bin
+	AHF is successfully installed
+	Moving /tmp/ahf_install_211000_36849_2021_07_27-14_34_01.log to /backup/AHF/oracle.ahf/data/lnxorarjh05/dia
+===============================================================================================================
+03. COPY TFA CERTIFICATES
+===============================================================================================================
+root@lnxorarjh05] [/backup/AHF/oracle.ahf/tfa/bin] # ./tfactl syncnodes
+	Current Node List in TFA :
+	1. lnxorarjh05
+	Node List in Cluster :
+	1. lnxorarjh05
+	2. lnxorarjh06
+	Node List to sync TFA Certificates :
+		 1  lnxorarjh06
+	Do you want to update this node list? [Y|N] [N]: y
+	Please Enter all the remote nodes you want to sync...
+	Enter Remote Node List (separated by space) : lnxorarjh06
+	Node List to sync TFA Certificates :
+		 1  lnxorarjh06
+	Syncing TFA Certificates on lnxorarjh06 :
+	TFA_HOME on lnxorarjh06 : /backup/AHF/oracle.ahf/tfa
+	DATA_DIR on lnxorarjh06 : /backup/AHF/oracle.ahf/data/lnxorarjh06/tfa
+	Shutting down TFA on lnxorarjh06...
+	Copying TFA Certificates to lnxorarjh06...
+	Copying SSL Properties to lnxorarjh06...
+	Sleeping for 5 seconds...
+	Starting TFA on lnxorarjh06...
+	.---------------------------------------------------------------------------------------------------.
+	| Host        | Status of TFA | PID   | Port | Version    | Build ID             | Inventory Status |
+	+-------------+---------------+-------+------+------------+----------------------+------------------+
+	| lnxorarjh05 | RUNNING       | 38334 | 5000 | 21.1.0.0.0 | 21100020210413115827 | COMPLETE         |
+	| lnxorarjh06 | RUNNING       | 18424 | 5000 | 21.1.0.0.0 | 21100020210413115827 | COMPLETE         |
+	'-------------+---------------+-------+------+------------+----------------------+------------------'
+[root@lnxorarjh05] [/backup/AHF/oracle.ahf/tfa/bin] #
+===============================================================================================================
+03. COPY TFA CERTIFICATES
+===============================================================================================================
+[root@lnxorarjh05] [/backup/AHF/oracle.ahf/tfa/bin] # ./tfactl toolstatus
+	Running command tfactltoolstatus on lnxorarjh06 ...
+	.-------------------------------------------------------------------------.
+	|                    TOOLS STATUS - HOST : lnxorarjh05                    |
+	+----------------------+--------------+--------------+--------------------+
+	| Tool Type            | Tool         | Version      | Status             |
+	+----------------------+--------------+--------------+--------------------+
+	| Development Tools    | orachk       |   20.2.2.0.0 | DEPLOYED           |
+	|                      | oratop       |       14.1.2 | DEPLOYED           |
+	+----------------------+--------------+--------------+--------------------+
+	| Support Tools Bundle | darda        | 2.10.0.R6036 | DEPLOYED           |
+	|                      | oswbb        |        8.3.2 | NOT MANAGED BY TFA |
+	|                      | prw          | 12.1.13.11.4 | NOT RUNNING        |
+	+----------------------+--------------+--------------+--------------------+
+	| TFA Utilities        | alertsummary |   20.2.2.0.0 | DEPLOYED           |
+	|                      | calog        |   20.2.2.0.0 | DEPLOYED           |
+	|                      | dbcheck      |   18.3.0.0.0 | DEPLOYED           |
+	|                      | dbglevel     |   20.2.2.0.0 | DEPLOYED           |
+	|                      | grep         |   20.2.2.0.0 | DEPLOYED           |
+	|                      | history      |   20.2.2.0.0 | DEPLOYED           |
+	|                      | ls           |   20.2.2.0.0 | DEPLOYED           |
+	|                      | managelogs   |   20.2.2.0.0 | DEPLOYED           |
+	|                      | menu         |   20.2.2.0.0 | DEPLOYED           |
+	|                      | param        |   20.2.2.0.0 | DEPLOYED           |
+	|                      | ps           |   20.2.2.0.0 | DEPLOYED           |
+	|                      | pstack       |   20.2.2.0.0 | DEPLOYED           |
+	|                      | summary      |   20.2.2.0.0 | DEPLOYED           |
+	|                      | tail         |   20.2.2.0.0 | DEPLOYED           |
+	|                      | triage       |   20.2.2.0.0 | DEPLOYED           |
+	|                      | vi           |   20.2.2.0.0 | DEPLOYED           |
+	'----------------------+--------------+--------------+--------------------'
+	Note :-
+	  DEPLOYED    : Installed and Available - To be configured or run interactively.
+	  NOT RUNNING : Configured and Available - Currently turned off interactively.
+	  RUNNING     : Configured and Available.
+===============================================================================================================
+04. DECIDIR SE VAI FICAR ATIVO E ATIVADO
+===============================================================================================================
+[root@lnxorarjh05]  # tfactl status
+[root@lnxorarjh05]  # tfactl stop
+[root@lnxorarjh05]  # tfactl disable
+===============================================================================================================
+04. DECIDIR SE VAI FICAR ATIVO E ATIVADO
+===============================================================================================================

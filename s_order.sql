@@ -1,0 +1,87 @@
+-- |----------------------------------------------------------------------------|
+-- | Objetivo   : Oracle Active Sessions Database                               |
+-- | Criado por : Roberto Fernandes Sobrinho                                    |
+-- | Data       : 15/12/2015                                                    |
+-- | Exemplo    : @s_order                                                      |
+-- | Arquivo    : s_order.sql                                                   |
+-- | Modificacao: V2.1 - 03/08/2019 - rfsobrinho - Vizulizar MODULE no USERNAME |
+-- +----------------------------------------------------------------------------+
+SET TERMOUT OFF;
+COLUMN current_instance NEW_VALUE current_instance NOPRINT;
+SELECT rpad(sys_context('USERENV', 'INSTANCE_NAME'), 17) current_instance FROM dual;
+SET TERMOUT ON;
+PROMPT
+PROMPT +------------------------------------------------------------------------+
+PROMPT | Report   : Active Sessions Oracle [ORDER BY]   +-+-+-+-+-+-+-+-+-+-+   |
+PROMPT | Instance : &current_instance                   |r|f|s|o|b|r|i|n|h|o|   |
+PROMPT | Version  : 2.1                                 +-+-+-+-+-+-+-+-+-+-+   |
+PROMPT +------------------------------------------------------------------------+
+PROMPT . . .
+ACCEPT ORDERX      char PROMPT '* ORDER BY  : ' 
+PROMPT . . .
+SET ECHO        OFF
+SET FEEDBACK    6
+SET HEADING     ON
+SET LINES       10000
+SET PAGES       10000
+SET TERMOUT     ON
+SET TIMING      OFF
+SET TRIMOUT     ON
+SET TRIMSPOOL   ON
+SET VERIFY      OFF
+CLEAR COLUMNS
+CLEAR BREAKS
+CLEAR COMPUTES
+col "SID/SERIAL" format a15  HEADING 'SID/SERIAL@I'
+col slave        format a17  HEADING 'SLAVE/W_CLASS'
+col opid         format a04
+col sopid        format a08
+col username     format a10
+col osuser       format a10
+col call_et      format a07
+col program      format a10
+col client_info  format a23
+col machine      format a20
+col logon_time   format a10
+col hold         format a06
+col sessionwait  format a25
+col status       format a08
+col hash_value   format a10
+col sc_wait      format a06 HEADING 'WAIT'
+col module       format a08 HEADING 'MODULE'
+SET COLSEP '|'
+select  s.sid || ',' || s.serial#|| case when s.inst_id is not null then ',@' || s.inst_id end  as "SID/SERIAL"
+,decode(upper(s.WAIT_CLASS),'IDLE','I','*')||' '||
+ to_char(nvl((case when e.qcsid is not null then e.qcsid || ',' || e.qcserial#|| case when e.inst_id is not null then ',@' || e.inst_id end end),substr(trim(s.WAIT_CLASS),1,13)))  as SLAVE
+,    to_char(p.pid)          as opid
+,    to_char(p.spid)         as sopid
+,    substr(s.username,1,10)||decode(s.username,'SYS',SUBSTR(nvl2(s.module,' [',null)||UPPER(s.module),1,6)||nvl2(s.module,']',null)) as username
+,    substr(s.osuser,1,10)   as osuser
+--,    substr(s.program,1,10)  as program
+,    case when instr(s.program,'(J0') > 0  then substr(s.program,instr(s.program,'(J0'),10)||'-JOB' else substr(s.program,1,10) end  as program
+,    substr(s.machine,1,20)  as machine
+,    to_char(s.logon_time,'ddmmrrhh24mi') as logon_time
+,        to_char(s.last_call_et)              as call_et
+,    substr((select trim(replace(replace(substr(event,1,100),'SQL*Net'),'Streams')) from gv$session_wait j where j.sid = s.sid and j.INST_ID =  s.inst_id),1,25) as sessionwait
+,        s.sql_id  as sql_id
+,    s.blocking_session || ',' || s.blocking_instance as hold
+,        to_char(s.seconds_in_wait) as sc_wait
+,     SUBSTR(nvl2(s.module,'[',null)||UPPER(trim(s.module)),1,6)||nvl2(s.module,']',null) as module
+from gv$session s
+,        gv$process p
+,    gv$px_session e
+Where s.paddr       = p.addr    (+)
+  and s.inst_id     = p.inst_id (+)
+  and s.status      = 'ACTIVE'
+  and s.inst_id     = e.inst_id (+)
+  and s.sid         = e.sid     (+)
+  and s.serial#     = e.serial# (+)
+  and s.WAIT_CLASS != 'Idle'
+  and nvl((case when e.qcsid is not null then e.qcsid || ',' || e.qcserial#|| case when e.inst_id is not null then ',@' || e.inst_id end end),substr(trim(s.WAIT_CLASS),1,13)) != 'Idle'
+  and s.username is not null
+order by decode(s.username,'SYS',to_number(s.inst_id||50000000),s.inst_id) , &ORDERX, case when instr(SLAVE,',,@') >0 then (substr(SLAVE,3,2)||'1') when instr(SLAVE,'@') >0 then  (decode(upper(s.WAIT_CLASS),'IDLE',2,1)||substr(SLAVE,3,2)||'2') else null end, 
+decode(s.username,'SYS',50000000,sc_wait), s.machine, s.last_call_et
+/
+SET FEEDBACK on
+UNDEFINE ORDERX
+--SET COLSEP ' '

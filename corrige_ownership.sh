@@ -1,0 +1,1 @@
+ls -lrt |grep ^- |awk '{print "chown "$3":"$4" "$9}' > corrige_ownership.sh

@@ -1,0 +1,212 @@
+##===============================================================================================================
+##  oratop - Utility for Near Real-time Monitoring of Databases, RAC and Single Instance (Doc ID 1500864.1)
+##===============================================================================================================
+##  export ORACLE_SID=BD01
+##  export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+##  ./oratop.RDBMS_11.2_LINUX_X64 -f -i 2 / as sysdba
+##===============================================================================================================
+## OPCOES:
+##    f : opcao de formato detalhado [padrão (default)] [detalhado]
+##    i : intervalo de atualização, requer valor em segundos [5s]
+##    q : saida (tambem, { Q | Esc | function keys })
+## (INTERACAO)
+##    t : informacoes de tablespace
+##    a : informacoes ASM diskgroup 
+##    x : SQL plan table (requer sql_id) 
+## (SESSAO 3)
+##    d : alternar entre eventos de espera [Cumulative (C)] & Real-Time (RT) (section 3)
+## (SESSAO 4)
+##    k : alternar entre [EVENT/LATCH] & object FILE#:BLOCK# (proc section 4)
+##    m : alternar entre [USERNAME/PROGRAM] & MODULE/ACTION (proc section 4)
+##    s : alterar para modo SQL (section 4)
+##    p : switch to [process] mode (section 4)
+##===============================================================================================================
+connect_identifier:
+o Net Service Name, (TNS) or
+o Easy Connect (host[:port]/[service_name])
+Options:
+-d : real-time (RT) wait events, section 3 (default is Cumulative)
+-k : FILE#:BLOCK#, section 4 lt is (EVENT/LATCH)
+-m : MODULE/ACTION, section 4 (default is USERNAME/PROGRAM)
+-s : SQL mode, section 4 (default is process mode)
+-c : database service mode (default is connect string)
+-f : detailed format, 132 columns (default: standard, 80 columns)
+-b : batch mode (default is text-based user interface)
+-n : maximum number of iterations (requires number)
+-i : interval delay, requires value in seconds (default: 5s)
+-v : oratop release version number
+-h : this help
+##===============================================================================================================
+Aqui podemos conferir como legendas e sentido o que é o que:
+https://mrochadba.wordpress.com/2015/06/18/monitorando-o-oracle-pelo-oratop/
+Acronym Help Menu:
+Section 1 – DATABASE ..        [1]
+Section 2 – INSTANCE ..        [2]
+Section 3 – DB WAIT EVENTS ..  [3]
+Section 4 – SQL ..             [4]
+Quit Help .. (q|Q)
+===============================================================================================================
+---------------------------------------------------------------------------------------------------------------
+Section 1 - database
+--------------------
+        Global Database information
+ 
+   Version        : Oracle major version
+   role           : database_role
+   db name        : db_unique_name
+   time        [s]: time as of the most recent stats (hh24:mi:ss)
+   up          [T]: database uptime
+   ins         [N]: total number of instance(s)
+   sn        [c,N]: total user sessions (active/inactive)
+   us        [c,N]: number of distinct users
+   mt        [s,N]: global database memory total (sga+pga)
+   fra         [N]: flashback recovery area %used, (red &gt; 90%)
+   er          [N]: diag active problem count (faults)
+   % db      [s,N]: database time as %(dbtime/cpu) (red if &gt; 99%)
+---------------------------------------------------------------------------------------------------------------
+Section 2 - instance
+--------------------
+        Top 5 Instance(s) Activity
+        o Ordered by Database time desc
+ 
+   ID        [c,N]: inst_id (instance id)
+   %CPU      [m,N]: host cpu busy %(busy/busy+idle). (red if &gt; 90%)
+   LOAD      [m,N]: current os load. (red if &gt; 2*#cpu &amp; high cpu)
+   %DCU      [m,N]: db cpu otusef as %host cpu. (red if &gt; 99% &amp; high AAS)
+   AAS       [s,N]: Average Active Sessions. (red if &gt; #cpu)
+   ASC       [c,N]: active Sessions on CPU
+   ASI       [c,N]: active Sessions waiting on user I/O
+   ASW       [c,N]: active Sessions Waiting, non-ASI (red if &gt; ASC+ASI)
+   ASP       [m,N]: active parallel sessions (F/G)
+   AST       [c,N]: Active user Sessions Total (ASC+ASI+ASW)
+   UST       [c,N]: user Sessions Total (ACT/INA)
+   MBPS      [m,N]: i/o megabytes per second (throughput)
+   IOPS      [m,N]: i/o requests per second
+   IORL      [m,T]: avg synchronous single-block read latency. (red &gt; 20ms)
+   LOGR      [s,N]: logical reads per sec
+   PHYR      [s,N]: physical reads per sec)
+   PHYW      [s,N]: physical writes per sec
+   %FR       [s,N]: shared pool free %
+   PGA       [s,N]: total pga allocated
+   TEMP      [s,N]: temp space used
+   UTPS      [s,N]: user transactions per sec
+   UCPS    [c,m,N]: user calls per sec
+   SSRT    [c,m,T]: sql service response time (T/call)
+   DCTR      [m,N]: database cpu time ratio
+   DWTR      [m,N]: database wait time ratio. (red if &gt; 50 &amp; high ASW)
+   %DBT      [s,N]: instance %Database Time (e.g. non-rac shows 100%)
+---------------------------------------------------------------------------------------------------------------
+Section 3 - db wait events
+--------------------
+        Top 5 Timed Events
+        o Cluster-wide, non-idle
+        o Ordered by wait time desc
+ 
+  EVENT      : wait event name. (red if active)
+        (RT) : Real-Time mode
+  WAITS      : total waits
+  TIME(s)    : total wait time in seconds)
+  AVG_MS     : average wait time in milliseconds
+  PCT        : percent of wait time (all events)
+  WAIT_CLASS : name of the wait class
+---------------------------------------------------------------------------------------------------------------
+Section 4 - process
+--------------------
+        o Non-Idle processes
+        o Ordered by event wait time desc
+ 
+   ID          [N]: inst_id. (red if blocking)
+   SID         [N]: session identifier. (red if blocking)
+   SPID        [N]: server process os id
+   USERNAME       : Oracle user name
+   PROGRAM        : process program name
+   SRV            : SERVER (dedicated, shared, etc.)
+   SERVICE        : db service_name
+   PGA         [N]: pga_used_mem. (red if continuously growing)
+   SQL_ID/BLOCKER : sql_id or the final blocker's (inst:sid, in red)
+   OPN            : operation name, e.g. select
+   E/T         [T]: session elapsed time (active/inactive)
+   STA            : ACTive|INActive|KILled|CAChed|SNIped
+   STE            : process state, e.g. on CPU or user I/O or WAIting
+   WAIT_CLASS     : wait_class for the named event
+   EVENT/*LATCH   : session wait event name. Auto toggle with *latch name.
+                    (red if process is hung/spin)
+   W/T         [T]: event wait time. (red if &gt; 1s)
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+##===============================================================================================================
+Section 1- oratop and database/instance specifics
+##===============================================================================================================
+spid :oratop’s server SPID connected to instance,
+SID :instance name (First 4 letters),
+clock :Time of current stats collected (hh24:mi:ss)
+time :uptime since this instance startup,
+ins :Total number of active database instance(s),
+MT :database total memory (sum Memory_Target),
+ses :Total user’s sessions,
+usr :Total distinct database foreground (F/G) users,
+%DB :%database Active, 0 0ndicate idle db
+
+##===============================================================================================================
+Section 2- Cluster-wide “Top 5 instances activity” ordered by Wait Time
+##===============================================================================================================
+ID    [c, N]	: inst_id (id da instância)
+% CPU [m, N]	: CPU do host ocupada% (busy/busy+idle). (vermelho se> 90%)
+LOAD  [m, N]	: carga atual do sistema operacional. (vermelho se> 2 * # CPU e CPU alta)
+% DCU [m, N]	: uso da CPU do db %host da CPU do host. (vermelho se> 99% e AAS alto)
+AAS   [s, N]	: Média de sessões ativas. (vermelho se> #cpu)
+ASC   [c, N]	: Sessões ativas na CPU
+ASI   [c, N]	: sessões ativas aguardando I/O do usuário
+ASW   [c, N]	: Sessões em espera ativas, não ASI (vermelho se> ASC + ASI)
+AST   [c, N]	: Total de sessões de usuário ativo (ASC + ASI + ASW)
+IOPS  [m, N]	: solicitações de I/O por segundo
+% FR  [s, N]	: shared pool free %
+PGA   [s, N]	: total de pga alocado
+UTPS  [s, N]	: transações do usuário por segundo
+UCPS  [c, m, N]	: chamadas do usuário por segundo
+SSRT  [c, m, T]	: tempo de resposta do serviço sql (T/call)
+% DBT [s, N]	: instância% Tempo do banco de dados (por exemplo, non-rac shows 100%)
+##===============================================================================================================
+Section 3- Cluster-wide “Top 5 Timed Events” ordered by Wait Time
+##===============================================================================================================
+EVENT :database wait event,
+WAITS :cluster average Total waits,
+TIME(s) :cluster average Total wait time in seconds),
+AVG_MS ::cluster Average wait time in milliseconds,
+PCT :Percent of wait time,
+WAIT_CLASS :Name of the wait class corresponding to the event.
+##===============================================================================================================
+Section 4- Session/process none-idle ordered by Wait Time desc.
+##===============================================================================================================
+ID :instance id,
+SID :session id,
+SPID :server process os pid,
+USR :user name (abbreviated),
+PROG :program name (abbreviated),
+PGA :process pga used,
+OPN :OPERATION name, e.g. SELECT,
+SQLID :SQL identifier if no blocker, else,
+/BLOCKR :final blocking instance:session:ospid,
+E/T :Elapsed Time since the session has become active. Units: (s)econds, (M)inutes, (h)our, (d)ay.
+STATUS :ACTIVE | INACTIVE | KILLED | CACHED | SNIPED,
+STE :Process STATE: ON CPU or USR I/O or WAITING,
+WAIT_EVENT :process wait event name,
+W/T :Wait Time. Units: (u)-micro second, (m)illi second, (s)econds, (M)inutes, (h)our, (d)ay.
+##===============================================================================================================
+Reference documents:
+1. oratop-Utility for Near Real-time Monitoring of Databases, RAC and Single Instance (Doc ID 1500864.1)
+##===============================================================================================================
+
+

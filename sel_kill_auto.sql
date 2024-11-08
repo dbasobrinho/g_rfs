@@ -1,0 +1,1 @@
+@$ORACLE_BASE/TVTDBA/AUTO/CRON_kill_auto_SELECT.sql

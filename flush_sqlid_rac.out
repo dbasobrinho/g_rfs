@@ -1,0 +1,46 @@
+SQL> @flush_sqlid_rac.sql
+
++-------------------------------------------------------------------------------------------+
+| https://github.com/dbasobrinho/g_gold/blob/main/flush_sqlid_rac.sql                       |
++-------------------------------------------------------------------------------------------+
+| Script   : Remove SQLID da Shared Pool de Todas as Instancias    +-+-+-+-+-+-+-+-+-+-+-+  |
+| Instancia: ebsprd5                                               |d|b|a|s|o|b|r|i|n|h|o|  |
+| Versao   : 1.0                                                   +-+-+-+-+-+-+-+-+-+-+-+  |
++-------------------------------------------------------------------------------------------+
+
+.
+.
+-------------------------------------------------------->
+Informe o SQL_ID: da5aa5muh76r7
+-------------------------------------------------------->
+.
+.
+JOB: "PBUM_da5aa5muh76r7_1" Plan Hash Value: 4110654183 SYS.DBMS_SHARED_POOL.PURGE ('0000004A978E0B40,4110654183','C');
+JOB: "PBUM_da5aa5muh76r7_2" Plan Hash Value: 4110654183 SYS.DBMS_SHARED_POOL.PURGE ('0000004B39498550,4110654183','C');
+JOB: "PBUM_da5aa5muh76r7_3" Plan Hash Value: 4110654183 SYS.DBMS_SHARED_POOL.PURGE ('0000004AD8B87D08,4110654183','C');
+JOB: "PBUM_da5aa5muh76r7_4" Plan Hash Value: 4110654183 SYS.DBMS_SHARED_POOL.PURGE ('0000004B3393B448,4110654183','C');
+JOB: "PBUM_da5aa5muh76r7_5" Plan Hash Value: 4110654183 SYS.DBMS_SHARED_POOL.PURGE ('0000004A763BABC0,4110654183','C');
+.
+.
+-------------------------------------------------------->
+Executando a Limpeza! Aguarde! . . .
+-------------------------------------------------------->
+.
+.
+
+  COUNT(*)
+----------
+         0
+.
+.
+
+LOG_DATE                                |JOB_NAME                                |STATUS
+----------------------------------------|----------------------------------------|-----------
+24-MAY-24 10.47.14.428315 AM -03:00     |PBUM_da5aa5muh76r7_4                    |SUCCEEDED
+24-MAY-24 10.47.15.304601 AM -03:00     |PBUM_da5aa5muh76r7_5                    |SUCCEEDED
+24-MAY-24 10.47.17.006437 AM -03:00     |PBUM_da5aa5muh76r7_1                    |SUCCEEDED
+24-MAY-24 10.47.18.495033 AM -03:00     |PBUM_da5aa5muh76r7_3                    |SUCCEEDED
+24-MAY-24 10.47.18.820499 AM -03:00     |PBUM_da5aa5muh76r7_2                    |SUCCEEDED
+.
+.
+SQL>

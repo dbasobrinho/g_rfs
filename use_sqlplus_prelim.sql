@@ -1,0 +1,1 @@
+ sqlplus -prelim / as sysdba

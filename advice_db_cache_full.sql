@@ -1,0 +1,40 @@
+COLUMN size_for_estimate          FORMAT 999,999,999,999 heading 'Cache Size (MB)' 
+COLUMN buffers_for_estimate       FORMAT 999,999,999 heading 'Buffers'
+COLUMN estd_physical_read_factor  FORMAT 999.90 heading 'Estd Phys|Read Factor'
+COLUMN estd_physical_reads        FORMAT 999,999,999,999 heading 'Estd Phys| Reads' 
+
+
+col ID head ID format 99
+col NAME head BUFFER_NAME format a12
+col BLOCK_SIZE head BLK|SIZE for 99999
+col ADVICE_STATUS head ADV|STATUS
+col SIZE_FOR_ESTIMATE head SIZE_FOR|EST_MB
+col SIZE_FACTOR head SIZE|FACTOR format 99.99
+col BUFFERS_FOR_ESTIMATE head NUM_BUFRS|FOR_EST
+col ESTD_PHYSICAL_READ_FACTOR head EST_PHY|READ_FACT format 99.99
+col ESTD_PHYSICAL_READS head ESTD_NUM|PHY_READS
+col ESTD_PHYSICAL_READ_TIME head ESTD_PHY|READ_TIME
+col ESTD_PCT_OF_DB_TIME_FOR_READS head ESTD_PCT|DB_TIME
+col ESTD_CLUSTER_READS head ESTD_BLKS|CLUST_READS
+col ESTD_CLUSTER_READ_TIME head ESTD_CLUST|READ_TIME
+ 
+set linesize 1000
+set pages    1000
+SET FEEDBACK    OFF
+select ID
+      ,NAME
+      ,BLOCK_SIZE
+      ,ADVICE_STATUS
+      ,SIZE_FOR_ESTIMATE
+      ,SIZE_FACTOR
+      ,BUFFERS_FOR_ESTIMATE
+      ,ESTD_PHYSICAL_READ_FACTOR
+      ,ESTD_PHYSICAL_READS
+      ,ESTD_PHYSICAL_READ_TIME
+      ,ESTD_PCT_OF_DB_TIME_FOR_READS
+      ,ESTD_CLUSTER_READS
+      ,ESTD_CLUSTER_READ_TIME
+from V$DB_CACHE_ADVICE
+order by id, SIZE_FACTOR
+/
+SET FEEDBACK    ON

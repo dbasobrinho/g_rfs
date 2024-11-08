@@ -1,0 +1,5 @@
+find . -name '*.aud' -mtime +2 -exec ls -ltr {} \
+find ./ -type f -ls |grep '18 Mar'
+find ./ -type f -ls |grep 'Mar 18 01'| -exec grep -i 'sec_case_sensitive_logon' {} \;
+grep -i 'sec_case_sensitive_logon' PFALCON1_m000_160_20200309222129947822143795.aud
+grep -i 'sec_case_sensitive_logon' 	PFALCON1_ora_9813_20200318013436852846143795.aud

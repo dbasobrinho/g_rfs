@@ -1,0 +1,26 @@
+SET ECHO        OFF
+SET FEEDBACK    6
+SET HEADING     ON
+SET LINESIZE    180
+SET PAGESIZE    50000
+SET TERMOUT     ON
+SET TIMING      OFF
+SET TRIMOUT     ON
+SET TRIMSPOOL   ON
+SET VERIFY      OFF
+
+CLEAR COLUMNS
+CLEAR BREAKS
+CLEAR COMPUTES
+
+COLUMN STATUS        FORMAT a15                HEADING 'STATUS'
+COLUMN FILENAME      FORMAT a45                HEADING 'RMAN OPERATION'
+COLUMN BYTES         FORMAT 99999999999999     HEADING 'BYTES'
+
+PROMPT +------------------------------------------------------------------------+
+PROMPT | ALTER DATABASE ENABLE BLOCK CHANGE TRACKING;   <DB_CREATE_FILE_DEST>   |
+PROMPT | ALTER DATABASE DISABLE BLOCK CHANGE TRACKING;                          |
+PROMPT +------------------------------------------------------------------------+
+
+SELECT STATUS, FILENAME, BYTES FROM v$block_change_tracking
+/

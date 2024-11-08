@@ -1,0 +1,11 @@
+/backup2
+[root@lnxorarjr01 ~]# vi /etc/exports
+
+/backup2/ *(rw,async,no_root_squash)
+exportfs -av
+
+mount 172.18.51.217:/backup2/ /bkp_full_pback_crise
+
+
+umont /bkp_full_pback_crise
+mount -o rw,hard,nointr,proto=tcp,bg,rsize=32768,wsize=32768,timeo=600 172.18.51.217:/backup2 /bkp_full_pback_crise

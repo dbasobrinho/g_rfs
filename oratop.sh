@@ -1,0 +1,28 @@
+#!/bin/bash
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+echo '========================================================================================='
+echo '## OPCOES:'
+echo '##    f : opcao de formato detalhado [padrão (default)] [detalhado]'
+echo '##    i : intervalo de atualização, requer valor em segundos [5s]'
+echo '##    q : saida (tambem, { Q | Esc | function keys })'
+echo '## (INTERACAO)'
+echo '##    t : informacoes de tablespace'
+echo '##    a : informacoes ASM diskgroup '
+echo '##    x : SQL plan table (requer sql_id) '
+echo '## (SESSAO 3)'
+echo '##    d : alternar entre eventos de espera [Cumulative (C)] & Real-Time (RT) (section 3)'
+echo '## (SESSAO 4)'
+echo '##    k : alternar entre [EVENT/LATCH] & object FILE#:BLOCK# (proc section 4)'
+echo '##    m : alternar entre [USERNAME/PROGRAM] & MODULE/ACTION (proc section 4)'
+echo '##    s : alterar para modo SQL (section 4)'
+echo '##    p : switch to [process] mode (section 4)'
+echo '========================================================================================='
+echo '$ORACLE_HOME/oratop.RDBMS_11.2_LINUX_X64 -f -d -i 1 / as sysdba'
+echo '$ORACLE_HOME/oratop -f -d -i 1 / as sysdba'
+echo '========================================================================================='
+
+######cp /tmp/.g/oratop.RDBMS_11.2_LINUX_X64 $ORACLE_HOME/
+######alias emctl='$AGENT12C_HOME/bin/emctl'
+######alias alert_WPMS.log='tail -100f /oracle/WPMS/diag/rdbms/wpms/WPMS/trace/alert_WPMS.log'
+######alias oratop='sh $ORACLE_HOME/oratop'
+######alias sql='sqlplus / as sysdba'

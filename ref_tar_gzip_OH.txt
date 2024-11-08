@@ -1,0 +1,18 @@
+ls -ltra
+tar pcvf - /oracle/PCENTER4/* |gzip -c > /oracle/PCENTER4/PCENTER4.tar.gz
+
+tar pcvf - 19300 |gzip -c > /tmp/OH_19300.tar.gz
+
+tar pcvf - 19300 |gzip -c > /oracle/JITPRD/OH_19300.tar.gz
+
+##descompactar
+tar -vzxf OH_19300.tar.gz
+
+
+tar -zcvf OH_19300.tar.gz /oracle/EVEPD/19300
+
+
+
+
+NA GEQ
+nohup tar cvfhz apps_$(date +%Y-%m-%d).tar.gz apps &

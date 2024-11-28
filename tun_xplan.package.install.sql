@@ -1,10 +1,9 @@
-
 -- ----------------------------------------------------------------------------------------------
 --
--- Script:       xplan.package.sql
--- 
--- Version:      1.2
+-- Script:       xplan.package.sql 
 --
+-- Version:      1.2 
+--  
 -- Author:       Adrian Billington
 --               www.oracle-developer.net
 --
@@ -116,20 +115,39 @@
 -- default is commented out. To include the AWR functionality, change the variables to " " (i.e.
 -- a single space).
 --
-
+ 
 SET DEFINE ON
-DEFINE _awr_start = "/*"
-DEFINE _awr_end   = "*/"
+--DEFINE _awr_start = "/*"
+--DEFINE _awr_end   = "*/"
 
 --
 -- Supporting types for the pipelined functions...
 --
+BEGIN
+   EXECUTE IMMEDIATE 'DROP PACKAGE SYS.XPLAN';
+EXCEPTION
+   WHEN OTHERS THEN
+      NULL;
+END;
+/
+BEGIN
+   EXECUTE IMMEDIATE 'DROP TYPE SYS.XPLAN_NTT';
+EXCEPTION
+   WHEN OTHERS THEN
+      NULL;
+END;
+/
+SELECT OWNER, NAME, TYPE
+FROM DBA_DEPENDENCIES
+WHERE REFERENCED_TYPE = 'TYPE'
+  AND REFERENCED_NAME = 'XPLAN_OT';
 
-CREATE OR REPLACE TYPE xplan_ot AS OBJECT
+
+CREATE OR REPLACE TYPE SYS.xplan_ot AS OBJECT
 ( plan_table_output VARCHAR2(300) );
 /
 
-CREATE OR REPLACE TYPE xplan_ntt AS
+CREATE OR REPLACE TYPE SYS.xplan_ntt AS
    TABLE OF xplan_ot;
 /
 
@@ -137,7 +155,7 @@ CREATE OR REPLACE TYPE xplan_ntt AS
 -- Xplan package...
 --
 
-CREATE OR REPLACE PACKAGE xplan AUTHID CURRENT_USER AS
+CREATE OR REPLACE PACKAGE SYS.xplan AUTHID CURRENT_USER AS
 
    FUNCTION display( p_table_name   IN VARCHAR2 DEFAULT 'PLAN_TABLE',
                      p_statement_id IN VARCHAR2 DEFAULT NULL,
@@ -149,18 +167,18 @@ CREATE OR REPLACE PACKAGE xplan AUTHID CURRENT_USER AS
                             p_format          IN VARCHAR2 DEFAULT 'TYPICAL' )
       RETURN xplan_ntt PIPELINED;
 
-&_awr_start
+--EE_awr_start
    FUNCTION display_awr( p_sql_id          IN VARCHAR2,
                          p_plan_hash_value IN INTEGER  DEFAULT NULL,
                          p_db_id           IN INTEGER  DEFAULT NULL,
                          p_format          IN VARCHAR2 DEFAULT 'TYPICAL' )
       RETURN xplan_ntt PIPELINED;
-&_awr_end
+--EE_awr_end
       
 END xplan;
 /
 
-CREATE OR REPLACE PACKAGE BODY xplan AS
+CREATE OR REPLACE PACKAGE BODY SYS.xplan AS
 
    TYPE ntt_map_binds IS TABLE OF VARCHAR2(100);
 
@@ -232,6 +250,8 @@ CREATE OR REPLACE PACKAGE BODY xplan AS
 
       -- Binds will differ according to plan type...
       -- -------------------------------------------
+	  --rfs
+	   --DBMS_OUTPUT.PUT_LINE('xx: '||v_sql);
       CASE p_binds.COUNT
          WHEN 0
          THEN
@@ -454,7 +474,7 @@ CREATE OR REPLACE PACKAGE BODY xplan AS
 
    END display_cursor;
 
-&_awr_start
+--EE_awr_start
    ----------------------------------------------------------------------------
    FUNCTION display_awr( p_sql_id          IN VARCHAR2,
                          p_plan_hash_value IN INTEGER  DEFAULT NULL,
@@ -540,11 +560,15 @@ CREATE OR REPLACE PACKAGE BODY xplan AS
       RETURN;
       
    END display_awr;
-&_awr_end
+--EE_awr_end
 
 END xplan;
 /
 
-UNDEFINE _awr_start
-UNDEFINE _awr_end
+--UNDEFINE _awr_start
+--UNDEFINE _awr_end
+SET TERMOUT OFF;
+grant all on xplan to public;
+create public synonym xplan for sys.xplan;
 
+SET TERMOUT on;

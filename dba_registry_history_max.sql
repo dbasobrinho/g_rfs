@@ -29,5 +29,5 @@ SELECT (select global_name from global_name) as db_name,
 FROM   sys.registry$history
 where action = 'APPLY'
 and version is not null
-and action_time = (select max(action_time) FROM   sys.registry$history where action = 'APPLY' and version is not null)
+and trunc(action_time) = (select trunc(max(action_time)) FROM   sys.registry$history where action = 'APPLY' and version is not null)
 ORDER by action_time;

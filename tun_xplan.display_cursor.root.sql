@@ -1,13 +1,9 @@
-
 -- ----------------------------------------------------------------------------------------------
---
+-- 
 -- Utility:      XPLAN
 -- 
--- Script:       xplan.display_cursor.sql
--- 
-
-
-
+-- Script:       xplan.display_cursor.sql 
+--
 -- Version:      1.3
 --
 -- Author:       Adrian Billington

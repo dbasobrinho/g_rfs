@@ -1,24 +1,22 @@
-
 -- ----------------------------------------------------------------------------------------------
---
--- Utility:      XPLAN
 -- 
--- Script:       xplan.display_cursor.sql
+-- Utility:      XPLAN 
+-- 
+-- Script:       xplan.display.sql
 --
--- Version:      1.3
+-- Version:      1.3 
 --
 -- Author:       Adrian Billington
 --               www.oracle-developer.net
 --               (c) oracle-developer.net
 --
 -- Description:  A free-standing SQL wrapper over DBMS_XPLAN. Provides access to the
---               DBMS_XPLAN.DISPLAY_CURSOR pipelined function for a given SQL_ID and CHILD_NO.
+--               DBMS_XPLAN.DISPLAY pipelined function for an explained SQL statement.
 --
 --               The XPLAN utility has one purpose: to include the parent operation ID (PID)
 --               and an execution order column (OID) in the plan output. This makes plan
 --               interpretation easier for larger or more complex execution plans. Version 1.3
---               has also added the object owner name to the output for more clarity.
---
+--               has also added the object owner to the output for more clarity.
 --
 --               See the following example for details.
 --
@@ -46,65 +44,55 @@
 --               |   5 |   4 |   3 |    TABLE ACCESS FULL         | SCOTT.EMP     |
 --               ------------------------------------------------------------------
 --
--- Usage:        @xplan.display_cursor.sql <sql_id> [cursor_child_number] [format]
+-- Usage:        @xplan.display.sql [plan_table] [statement_id] [plan_format]
 --
---               Parameters: 1) sql_id           - OPTIONAL (defaults to last executed SQL_ID)
---                           2) sql_child_number - OPTIONAL (defaults to 0)
---                           3) plan_format      - OPTIONAL (defaults to TYPICAL)
+--               Parameters: 1) plan_table    - OPTIONAL (defaults to PLAN_TABLE)
+--                           2) statement_id  - OPTIONAL (defaults to NULL)
+--                           3) plan_format   - OPTIONAL (defaults to TYPICAL)
 --
--- Examples:     1) Plan for last executed SQL (needs serveroutput off)
---                  ---------------------------------------------------
---                  @xplan.display_cursor.sql
+-- Examples:     1) Plan for last explained SQL statement
+--                  -------------------------------------
+--                  @xplan.display.sql
 --
---               2) Plan for a SQL_ID with default child number
---                  -------------------------------------------
---                  @xplan.display_cursor.sql 9vfvgsk7mtkr4
+--               2) Plan for a specific statement_id
+--                  --------------------------------
+--                  @xplan.display.sql "" "my_statement_id"
 --
---               3) Plan for a SQL_ID with specific child number
---                  --------------------------------------------
---                  @xplan.display_cursor.sql 9vfvgsk7mtkr4 1
+--               3) Plan for last explained SQL statement using a non-standard plan table
+--                  ---------------------------------------------------------------------
+--                  @xplan.display.sql "my_plan_table"
 --
---               4) Plan for a SQL_ID with default child number and non-default format
---                  ------------------------------------------------------------------
---                  @xplan.display_cursor.sql 9vfvgsk7mtkr4 "" "basic +projection"
---
---               5) Plan for a SQL_ID, specific child number and non-default format
+--               4) Plan for last explained SQL statement with a non-default format
 --                  ---------------------------------------------------------------
---                  @xplan.display_cursor.sql 9vfvgsk7mtkr4 1 "advanced"
+--                  @xplan.display.sql "" "" "basic +projection"
+--
+--               5) Plan for a specific statement_id and non-default format
+--                  -------------------------------------------------------
+--                  @xplan.display.sql "" "my_statement_id" "advanced"
+--
+--               6) Plan for last explained SQL statement with a non-default plan table and non-default format
+--                  ------------------------------------------------------------------------------------------
+--                  @xplan.display.sql "my_plan_table" "my_statement_id" "advanced"
 --
 -- Versions:     This utility will work for all versions of 10g and upwards.
 --
--- Required:     1) Access to GV$SESSION, GV$SQL_PLAN
+-- Required:     1) Access to a plan table that corresponds to the Oracle version being used.
 --
 -- Notes:        An XPLAN PL/SQL package is also available. This has wrappers for all of the
 --               DBMS_XPLAN pipelined functions, but requires the creation of objects.
 --
 -- Credits:      1) James Padfield for the hierarchical query to order the plan operations.
---               2) Paul Vale for the suggestion to turn XPLAN.DISPLAY_CURSOR into a standalone
---                  SQL script, including a prototype.
 --
 -- Disclaimer:   http://www.oracle-developer.net/disclaimer.php
 --
 -- ----------------------------------------------------------------------------------------------
 
 set define on
-define v_xc_version = 1.3
-
--- Fetch the previous SQL details in case they're not supplied...
--- --------------------------------------------------------------
-set termout off
-column prev_sql_id       new_value v_xc_prev_sql_id
-column prev_child_number new_value v_xc_prev_child_no
-select prev_sql_id
-,      prev_child_number
-from   gv$session
-where  inst_id = sys_context('userenv','instance')
-and    sid = sys_context('userenv','sid')
-and    username is not null
-and    prev_hash_value <> 0;
+define v_xp_version = 1.3
 
 -- Initialise variables 1,2,3 in case they aren't supplied...
 -- ----------------------------------------------------------
+set termout off
 column 1 new_value 1
 column 2 new_value 2
 column 3 new_value 3
@@ -114,15 +102,23 @@ select null as "1"
 from   dual
 where  1=2;
 
+-- Set the plan table...
+-- ---------------------
+column plan_table new_value v_xp_plan_table
+select nvl('&1', 'PLAN_TABLE') as plan_table
+from   dual;
+
 -- Finally prepare the inputs to the main Xplan SQL...
 -- ---------------------------------------------------
-column sql_id   new_value v_xc_sql_id
-column child_no new_value v_xc_child_no
-column format   new_value v_xc_format
-select nvl('&1', '&v_xc_prev_sql_id')              as sql_id
-,      to_number(nvl('&2', '&v_xc_prev_child_no')) as child_no
-,      nvl('&3', 'typical')                        as format
-from   dual;
+column plan_id  new_value v_xp_plan_id
+column stmt_id  new_value v_xp_stmt_id
+column format   new_value v_xp_format
+select nvl(max(plan_id), -1)                                           as plan_id
+,      max(statement_id) keep (dense_rank first order by plan_id desc) as stmt_id
+,      nvl(max('&3'), 'typical')                                       as format
+from   &v_xp_plan_table
+where  id = 0
+and    nvl(statement_id, '~') = coalesce('&2', statement_id, '~');
 
 -- Main Xplan SQL...
 -- -----------------
@@ -130,11 +126,10 @@ set termout on lines 200 pages 1000
 col plan_table_output format a200
 
 with sql_plan_data as (
-        select  id, parent_id, object_owner, object_name
-        from    gv$sql_plan
-        where   inst_id = sys_context('userenv','instance')
-        and     sql_id = '&v_xc_sql_id'
-        and     child_number = to_number('&v_xc_child_no')
+        select id, parent_id, object_owner, object_name
+        from   &v_xp_plan_table
+        where  plan_id = &v_xp_plan_id
+        order  by id
         )
 ,    hierarchy_data as (
         select  id, parent_id, object_owner, object_name
@@ -162,7 +157,7 @@ with sql_plan_data as (
         ,      o.object_owner
         ,      o.object_name
         ,      count(*) over () as row_count
-        from   table(dbms_xplan.display_cursor('&v_xc_sql_id',to_number('&v_xc_child_no'),'&v_xc_format')) x
+        from   table(dbms_xplan.display('&v_xp_plan_table','&v_xp_stmt_id','&v_xp_format')) x
                left outer join
                ordered_hierarchy_data o
                on (o.id = case
@@ -220,23 +215,21 @@ model
                                             end ||
                                             case
                                                when cv(r) = rc[cv()]
-                                               then chr(10) ||
+                                               then  chr(10) || chr(10) ||
                                                     'About'  || chr(10) ||
                                                     '------' || chr(10) ||
-                                                    '  - XPlan v&v_xc_version by Adrian Billington (http://www.oracle-developer.net)'
+                                                    '  - XPlan v&v_xp_version by Adrian Billington (http://www.oracle-developer.net)'
                                             end
          )
 order  by r;
 
-
 -- Teardown...
 -- -----------
-undefine v_xc_sql_id
-undefine v_xc_child_no
-undefine v_xc_format
-undefine v_xc_prev_sql_id
-undefine v_xc_prev_child_no
-undefine v_xc_version
+undefine v_xp_plan_table
+undefine v_xp_plan_id
+undefine v_xp_stmt_id
+undefine v_xp_format
+undefine v_xp_version
 undefine 1
 undefine 2
 undefine 3

@@ -22,6 +22,6 @@ SELECT (select  UPPER(A.INSTANCE_NAME) INSTANCE_NAME from V$INSTANCE a) INSTANCE
        comments,
        bundle_series
 FROM   sys.registry$history
-where UPPER(bundle_series) like '%PSU%'
+where UPPER(version) like '%19.24%'
 ORDER by action_time
 /

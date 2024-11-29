@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------
 --
---   
+--    
 --  NAME
 --    mtcs.sql
 -- 
@@ -89,30 +89,54 @@ SELECT 'exec  '||case :isdigits when 1 then replace(b.name,':',':N') else b.name
 -- Generate statement
 --
 
-SELECT REGEXP_REPLACE(
-           REGEXP_REPLACE(
-               sql_fulltext,
-               '(SELECT|select|Select|SeLeCt|sElEcT)\s+',  -- Variações de SELECT
-               'SELECT /* case_DBA_' || '&sql_id' || ' */ ', -- ADD o comentário
-               1,0),
-           '(,|FROM|from|WHERE|where|AND|and|GROUP BY|group by|ORDER BY|order by|HAVING|having|ON|on|JOIN|join|INNER JOIN|inner join|LEFT JOIN|left join|RIGHT JOIN|right join|FULL JOIN|full join|CROSS JOIN|cross join|UNION|union|UNION ALL|union all|INTERSECT|intersect|EXCEPT|except|INSERT INTO|insert into|VALUES|values|UPDATE|update|SET|set|DELETE|delete|IN|in|EXISTS|exists|LIMIT|limit|OFFSET|offset)', 
-           CHR(10) || '\1', -- da enter no comando 
-           1,0 )||';' AS sql_fulltext
-FROM (
-    SELECT LISTAGG(sql_text, '') WITHIN GROUP (ORDER BY rownum) AS sql_fulltext
-    FROM v$sql
-    WHERE sql_id = '&sql_id'
-);
+SET SERVEROUTPUT ON SIZE UNLIMITED;
 
----select regexp_replace(sql_fulltext,'(select |SELECT )','select /* simula_&sql_id */ ',1,1) sql_fulltext from (
----select case :isdigits when 1 then replace(sql_fulltext,':',':N') else sql_fulltext end ||';' sql_fulltext
----from v$sqlarea
----where sql_id = '&sql_id');
+DECLARE
+    v_sql_text CLOB;
+    v_result CLOB;
+    v_line VARCHAR2(4000);
+    v_position PLS_INTEGER := 1;
+    v_end_position PLS_INTEGER;
+BEGIN /*++REMOVER_DO_SEL_DO_GUINA_XX++*/
+    SELECT 
+        CASE :isdigits 
+            WHEN 1 THEN REPLACE(sql_text, ':', ':N') 
+            ELSE sql_text 
+        END
+    INTO v_sql_text
+    FROM dba_hist_sqltext
+    WHERE sql_id = '&sql_id';
+
+    -- Modificar o texto SQL e adicionar o comentário de teste
+    v_result := regexp_replace(v_sql_text, '(select |SELECT )', 'select /* CASE_DBA_&sql_id */ ', 1, 1);
+
+    -- Processar cada linha do CLOB e remover linhas em branco
+    LOOP
+        -- Encontrar a posição do próximo caractere de nova linha
+        v_end_position := INSTR(v_result, CHR(10), v_position);
+        
+        -- Se não houver mais quebras de linha, processar o resto do texto e sair do loop
+        IF v_end_position = 0 THEN
+            v_line := SUBSTR(v_result, v_position);
+            EXIT;
+        ELSE 
+            v_line := SUBSTR(v_result, v_position, v_end_position - v_position);
+            v_position := v_end_position + 1;
+        END IF;
+
+        -- Remover espaços no início e no final e verificar se a linha não está em branco
+        IF TRIM(v_line) IS NOT NULL THEN
+            DBMS_OUTPUT.PUT_LINE(v_line);
+        END IF;
+    END LOOP;
+	DBMS_OUTPUT.PUT_LINE('/');
+END;
+/
+
 
 select 'column sql_id new_value m_sql_id' from dual;
 select 'column child_number new_value m_child_no' from dual;
-select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%case_DBA_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%regexp_replace%'';' from dual;
-
+select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%CASE_DBA_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%++REMOVER_DO_SEL_DO_GUINA_XX++%'';' from dual;
 
 select 'SELECT * FROM TABLE (dbms_xplan.display_cursor ('''||'&'||'m_sql_id'','||'&'||'m_child_no,''ADVANCED ALLSTATS LAST''));' from dual;
 
@@ -120,7 +144,7 @@ UNDEFINE sql_id
 UNDEFINE child_no
 
 set feedback on verify on timing on head on;
-set lines 200 pages 100
+set lines 188 pages 300
 
 
 

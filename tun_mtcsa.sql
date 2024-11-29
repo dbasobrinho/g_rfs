@@ -3,7 +3,7 @@
 --   
 --  NAME
 --    mtcsa.sql
--- 
+--  
 --  DESCRIPTON
 --    Make script test case - query AWR 
 --
@@ -136,7 +136,7 @@ DECLARE
     v_line VARCHAR2(4000);
     v_position PLS_INTEGER := 1;
     v_end_position PLS_INTEGER;
-BEGIN
+BEGIN /*++REMOVER_DO_SEL_DO_GUINA_XX++*/
     SELECT 
         CASE :isdigits 
             WHEN 1 THEN REPLACE(sql_text, ':', ':N') 
@@ -147,7 +147,7 @@ BEGIN
     WHERE sql_id = '&sql_id';
 
     -- Modificar o texto SQL e adicionar o comentário de teste
-    v_result := regexp_replace(v_sql_text, '(select |SELECT )', 'select /* test_&sql_id */ ', 1, 1);
+    v_result := regexp_replace(v_sql_text, '(select |SELECT )', 'select /* CASE_DBA_&sql_id */ ', 1, 1);
 
     -- Processar cada linha do CLOB e remover linhas em branco
     LOOP
@@ -158,7 +158,7 @@ BEGIN
         IF v_end_position = 0 THEN
             v_line := SUBSTR(v_result, v_position);
             EXIT;
-        ELSE
+        ELSE 
             v_line := SUBSTR(v_result, v_position, v_end_position - v_position);
             v_position := v_end_position + 1;
         END IF;
@@ -168,16 +168,13 @@ BEGIN
             DBMS_OUTPUT.PUT_LINE(v_line);
         END IF;
     END LOOP;
+	DBMS_OUTPUT.PUT_LINE('/');
 END;
 /
 
-
--- 8vv60vqr463s1
-
-
 select 'column sql_id new_value m_sql_id' from dual;
 select 'column child_number new_value m_child_no' from dual;
-select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%test_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%regexp_replace%'';' from dual;
+select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%CASE_DBA_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%++REMOVER_DO_SEL_DO_GUINA_XX++%'';' from dual;
 
 
 select 'SELECT * FROM TABLE (dbms_xplan.display_cursor ('''||'&'||'m_sql_id'','||'&'||'m_child_no,''ADVANCED ALLSTATS LAST''));' from dual;
@@ -186,7 +183,7 @@ UNDEFINE sql_id
 
 
 set feedback on verify on timing on head on;
-set lines 200 pages 100
+set lines 188 pages 300
 
 
 

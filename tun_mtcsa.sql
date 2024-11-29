@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------
 --
---
+--   
 --  NAME
 --    mtcsa.sql
 -- 
@@ -25,6 +25,7 @@ set head off;
 set tab off;
 --
 accept sql_id char prompt "Enter SQL ID ==> "
+
 
 var isdigits number;
 var bind_count number;
@@ -121,11 +122,58 @@ SELECT 'SET TERMOUT on;'      FROM DUAL
 --
 -- Generate statement
 --
-SELECT regexp_replace(sqltext,'(select |SELECT )','select /* test_&sql_id */ ',1,1) sqltext from (
-select case :isdigits when 1 then replace(DBMS_LOB.substr(sql_text,4000,1),':',':N') else DBMS_LOB.substr(sql_text,4000,1) end ||';'  sqltext
-from dba_hist_sqltext
-where sql_id = '&sql_id')
+--SELECT regexp_replace(sqltext,'(select |SELECT )','select /* test_&sql_id */ ',1,1) sqltext from (
+--select case :isdigits when 1 then replace(DBMS_LOB.substr(sql_text,4000,1),':',':N') else DBMS_LOB.substr(sql_text,4000,1) end ||';'  sqltext
+--from dba_hist_sqltext
+--where sql_id = '&sql_id')
+--/
+
+SET SERVEROUTPUT ON SIZE UNLIMITED;
+
+DECLARE
+    v_sql_text CLOB;
+    v_result CLOB;
+    v_line VARCHAR2(4000);
+    v_position PLS_INTEGER := 1;
+    v_end_position PLS_INTEGER;
+BEGIN
+    SELECT 
+        CASE :isdigits 
+            WHEN 1 THEN REPLACE(sql_text, ':', ':N') 
+            ELSE sql_text 
+        END
+    INTO v_sql_text
+    FROM dba_hist_sqltext
+    WHERE sql_id = '&sql_id';
+
+    -- Modificar o texto SQL e adicionar o comentário de teste
+    v_result := regexp_replace(v_sql_text, '(select |SELECT )', 'select /* test_&sql_id */ ', 1, 1);
+
+    -- Processar cada linha do CLOB e remover linhas em branco
+    LOOP
+        -- Encontrar a posição do próximo caractere de nova linha
+        v_end_position := INSTR(v_result, CHR(10), v_position);
+        
+        -- Se não houver mais quebras de linha, processar o resto do texto e sair do loop
+        IF v_end_position = 0 THEN
+            v_line := SUBSTR(v_result, v_position);
+            EXIT;
+        ELSE
+            v_line := SUBSTR(v_result, v_position, v_end_position - v_position);
+            v_position := v_end_position + 1;
+        END IF;
+
+        -- Remover espaços no início e no final e verificar se a linha não está em branco
+        IF TRIM(v_line) IS NOT NULL THEN
+            DBMS_OUTPUT.PUT_LINE(v_line);
+        END IF;
+    END LOOP;
+END;
 /
+
+
+-- 8vv60vqr463s1
+
 
 select 'column sql_id new_value m_sql_id' from dual;
 select 'column child_number new_value m_child_no' from dual;
@@ -134,7 +182,8 @@ select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%test_&sql_
 
 select 'SELECT * FROM TABLE (dbms_xplan.display_cursor ('''||'&'||'m_sql_id'','||'&'||'m_child_no,''ADVANCED ALLSTATS LAST''));' from dual;
 
-UNDEFINE sql_id 
+UNDEFINE sql_id
+
 
 set feedback on verify on timing on head on;
 set lines 200 pages 100

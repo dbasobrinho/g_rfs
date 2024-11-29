@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------
 --
---
+--   
 --  NAME
 --    mtcs.sql
 -- 
@@ -23,6 +23,8 @@ set pagesize 50000;
 set timing off;
 set head off;
 set tab off;
+SET LONGCHUNKSIZE 1000
+SET WRAP ON
 --
 accept sql_id char prompt "Enter SQL ID ==> "
 accept child_no char prompt "Enter Child Number ==> " default 0
@@ -31,6 +33,7 @@ var isdigits number;
 var bind_count number;
 
 col sql_fulltext for a300;
+col formatted_sql for a300;
 
 begin
 
@@ -70,7 +73,7 @@ SELECT DISTINCT(var_text) FROM (
          FROM v$sql_bind_capture 
         WHERE sql_id='&sql_id')
  ORDER BY 1;
-
+ 
 
 
 SELECT 'exec  '||case :isdigits when 1 then replace(b.name,':',':N') else b.name end||' := '||decode(b.DATATYPE,2,null,1,'''')||VALUE_STRING||decode(b.DATATYPE,2,null,1,'''')||';' as var_text 
@@ -86,14 +89,29 @@ SELECT 'exec  '||case :isdigits when 1 then replace(b.name,':',':N') else b.name
 -- Generate statement
 --
 
-select regexp_replace(sql_fulltext,'(select |SELECT )','select /* simula_&sql_id */ ',1,1) sql_fulltext from (
-select case :isdigits when 1 then replace(sql_fulltext,':',':N') else sql_fulltext end ||';' sql_fulltext
-from v$sqlarea
-where sql_id = '&sql_id');
+SELECT REGEXP_REPLACE(
+           REGEXP_REPLACE(
+               sql_fulltext,
+               '(SELECT|select|Select|SeLeCt|sElEcT)\s+',  -- Variações de SELECT
+               'SELECT /* case_DBA_' || '&sql_id' || ' */ ', -- ADD o comentário
+               1,0),
+           '(,|FROM|from|WHERE|where|AND|and|GROUP BY|group by|ORDER BY|order by|HAVING|having|ON|on|JOIN|join|INNER JOIN|inner join|LEFT JOIN|left join|RIGHT JOIN|right join|FULL JOIN|full join|CROSS JOIN|cross join|UNION|union|UNION ALL|union all|INTERSECT|intersect|EXCEPT|except|INSERT INTO|insert into|VALUES|values|UPDATE|update|SET|set|DELETE|delete|IN|in|EXISTS|exists|LIMIT|limit|OFFSET|offset)', 
+           CHR(10) || '\1', -- da enter no comando 
+           1,0 )||';' AS sql_fulltext
+FROM (
+    SELECT LISTAGG(sql_text, '') WITHIN GROUP (ORDER BY rownum) AS sql_fulltext
+    FROM v$sql
+    WHERE sql_id = '&sql_id'
+);
+
+---select regexp_replace(sql_fulltext,'(select |SELECT )','select /* simula_&sql_id */ ',1,1) sql_fulltext from (
+---select case :isdigits when 1 then replace(sql_fulltext,':',':N') else sql_fulltext end ||';' sql_fulltext
+---from v$sqlarea
+---where sql_id = '&sql_id');
 
 select 'column sql_id new_value m_sql_id' from dual;
 select 'column child_number new_value m_child_no' from dual;
-select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%simula_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'';' from dual;
+select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%case_DBA_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%regexp_replace%'';' from dual;
 
 
 select 'SELECT * FROM TABLE (dbms_xplan.display_cursor ('''||'&'||'m_sql_id'','||'&'||'m_child_no,''ADVANCED ALLSTATS LAST''));' from dual;

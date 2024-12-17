@@ -133,12 +133,12 @@ SET SERVEROUTPUT ON SIZE UNLIMITED;
 DECLARE
     v_sql_text CLOB;
     v_result CLOB;
-    v_line VARCHAR2(4000);
+    v_line VARCHAR2(32767);
     v_position PLS_INTEGER := 1;
     v_end_position PLS_INTEGER;
-BEGIN /*++REMOVER_DO_SEL_DO_GUINA_XX++*/
+BEGIN
     SELECT 
-        CASE :isdigits 
+        CASE :isdigits
             WHEN 1 THEN REPLACE(sql_text, ':', ':N') 
             ELSE sql_text 
         END
@@ -146,35 +146,35 @@ BEGIN /*++REMOVER_DO_SEL_DO_GUINA_XX++*/
     FROM dba_hist_sqltext
     WHERE sql_id = '&sql_id';
 
-    -- Modificar o texto SQL e adicionar o comentário de teste
     v_result := regexp_replace(v_sql_text, '(select |SELECT )', 'select /* CASE_DBA_&sql_id */ ', 1, 1);
 
-    -- Processar cada linha do CLOB e remover linhas em branco
     LOOP
-        -- Encontrar a posição do próximo caractere de nova linha
         v_end_position := INSTR(v_result, CHR(10), v_position);
-        
-        -- Se não houver mais quebras de linha, processar o resto do texto e sair do loop
+
         IF v_end_position = 0 THEN
             v_line := SUBSTR(v_result, v_position);
+            IF TRIM(v_line) IS NOT NULL THEN
+                DBMS_OUTPUT.PUT_LINE(v_line);
+            END IF;
             EXIT;
-        ELSE 
+        ELSE
             v_line := SUBSTR(v_result, v_position, v_end_position - v_position);
             v_position := v_end_position + 1;
-        END IF;
 
-        -- Remover espaços no início e no final e verificar se a linha não está em branco
-        IF TRIM(v_line) IS NOT NULL THEN
-            DBMS_OUTPUT.PUT_LINE(v_line);
+            IF TRIM(v_line) IS NOT NULL THEN
+                DBMS_OUTPUT.PUT_LINE(v_line);
+            END IF;
         END IF;
     END LOOP;
-	DBMS_OUTPUT.PUT_LINE('/');
+    DBMS_OUTPUT.PUT_LINE('/');
 END;
 /
 
 select 'column sql_id new_value m_sql_id' from dual;
 select 'column child_number new_value m_child_no' from dual;
-select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%CASE_DBA_&sql_id%'' AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%++REMOVER_DO_SEL_DO_GUINA_XX++%'';' from dual;
+select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%CASE_DBA_&sql_id%'' and upper(sql_text) LIKE ''%SQL ANALYZE(%''  AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%++REMOVER_DO_SEL_DO_GUINA_XX++%'';' 
+
+from dual;
 
 
 select 'SELECT * FROM TABLE (dbms_xplan.display_cursor ('''||'&'||'m_sql_id'','||'&'||'m_child_no,''ADVANCED ALLSTATS LAST''));' from dual;

@@ -20,6 +20,7 @@ COLUMN column_name FORMAT A20
 COLUMN column_position FORMAT 999
 COLUMN num_distinct FORMAT 9999999
 COLUMN clustering_factor FORMAT 9999999
+COLUMN selectivity FORMAT 9999999.99999999
 
 accept name prompt 'Nome da tabela: '
 prompt
@@ -33,8 +34,9 @@ SELECT
     ic.column_name,
     ic.column_position,
     ts.num_distinct,
+    t.num_rows,
     idx.clustering_factor,
-    t.num_rows
+	ts.num_distinct / t.num_rows AS selectivity
 FROM 
     dba_ind_columns ic
 LEFT JOIN 

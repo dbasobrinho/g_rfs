@@ -3,8 +3,8 @@
 -- | Objetivo   : Verificar arquivos de dados com SCN fuzzy e checkpoint                       |
 -- | Criador    : Roberto Fernandes Sobrinho                                                   |
 -- | Data       : 24/01/2025                                                                   |
--- | Exemplo    : @fuzzy.sql                                                                   |  
--- | Arquivo    : fuzzy.sql                                                                    |
+-- | Exemplo    : @fuzzy_det.sql                                                               |  
+-- | Arquivo    : fuzzy_det.sql                                                                |
 -- | Referência : Baseado em x$kcvfh e v$datafile_header                                       |
 -- +-------------------------------------------------------------------------------------------+
 -- |                                                                https://dbasobrinho.com.br |
@@ -21,7 +21,7 @@ SET TERMOUT ON;
 
 PROMPT
 PROMPT +-------------------------------------------------------------------------------------------+
-PROMPT | https://github.com/dbasobrinho/g_gold/blob/main/fuzzy.sql                                 |
+PROMPT | https://github.com/dbasobrinho/g_gold/blob/main/fuzzy_det.sql                             |
 PROMPT +-------------------------------------------------------------------------------------------+
 PROMPT | Script   : Verificar arquivos de dados com SCN fuzzy e checkpoint                         |
 PROMPT | Instancia: &current_instance                                                              |
@@ -42,7 +42,7 @@ COLUMN absolute_fuzzy_scn FORMAT 999999999999999 HEADING 'Absolute|Fuzzy SCN';
 COLUMN min_pit_scn FORMAT 999999999999999 HEADING 'Min PIT SCN';
 
 
-SET FEEDBACK off
+SET FEEDBACK OFF
 SELECT 
     hxfil AS file#, 
     SUBSTR(hxfnm, 1, 50) AS name, 
@@ -54,7 +54,7 @@ FROM
 WHERE 
     fhafs != 0
 /
-SET FEEDBACK on
+SET FEEDBACK ON
 
 COLUMN con_id FORMAT 9999 HEADING 'Container|ID';
 COLUMN status FORMAT A10 HEADING 'Status';
@@ -62,19 +62,13 @@ COLUMN checkpoint_change FORMAT A20 HEADING 'Checkpoint|Change#';
 COLUMN checkpoint_time FORMAT A20 HEADING 'Checkpoint|Time';
 COLUMN cnt FORMAT 9999 HEADING 'Count';
 COLUMN fuzzy FORMAT A6 HEADING 'Fuzzy';
+COLUMN file_name FORMAT A100 HEADING 'file_name';
 
 
-SELECT 
-    STATUS,
-    TO_CHAR(checkpoint_change#) AS checkpoint_change,
-    TO_CHAR(checkpoint_time, 'dd-mon-yyyy hh24:mi:ss') AS checkpoint_time,
-    COUNT(*) AS cnt,
-    fuzzy
-FROM 
-    v$datafile_header
-GROUP BY 
-     STATUS, checkpoint_change#, checkpoint_time, fuzzy
-ORDER BY 
-     STATUS, checkpoint_change#, checkpoint_time
+select  a.status,to_char(a.checkpoint_change#) checkpoint_change
+      ,to_char(a.checkpoint_time, 'dd-mon-yyyy hh24:mi:ss') as checkpoint_time
+      ,a.fuzzy, a.FILE#, x.file_name
+  from v$datafile_header a, dba_data_files x
+  where x.file_id(+) = a.FILE#
+ order by a.checkpoint_change#,a.checkpoint_time, a.FILE#
 /
-

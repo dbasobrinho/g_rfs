@@ -3,8 +3,8 @@
 -- | Objetivo   : Verificar arquivos de dados com SCN fuzzy e checkpoint                       |
 -- | Criador    : Roberto Fernandes Sobrinho                                                   |
 -- | Data       : 24/01/2025                                                                   |
--- | Exemplo    : @fuzzy.sql                                                                   |  
--- | Arquivo    : fuzzy.sql                                                                    |
+-- | Exemplo    : @fuzzy_cdb.sql                                                               |  
+-- | Arquivo    : fuzzy_cdb.sql                                                                |
 -- | Referência : Baseado em x$kcvfh e v$datafile_header                                       |
 -- +-------------------------------------------------------------------------------------------+
 -- |                                                                https://dbasobrinho.com.br |
@@ -21,7 +21,7 @@ SET TERMOUT ON;
 
 PROMPT
 PROMPT +-------------------------------------------------------------------------------------------+
-PROMPT | https://github.com/dbasobrinho/g_gold/blob/main/fuzzy.sql                                 |
+PROMPT | https://github.com/dbasobrinho/g_gold/blob/main/fuzzy_cdb.sql                             |
 PROMPT +-------------------------------------------------------------------------------------------+
 PROMPT | Script   : Verificar arquivos de dados com SCN fuzzy e checkpoint                         |
 PROMPT | Instancia: &current_instance                                                              |
@@ -63,8 +63,8 @@ COLUMN checkpoint_time FORMAT A20 HEADING 'Checkpoint|Time';
 COLUMN cnt FORMAT 9999 HEADING 'Count';
 COLUMN fuzzy FORMAT A6 HEADING 'Fuzzy';
 
-
 SELECT 
+    CON_ID,
     STATUS,
     TO_CHAR(checkpoint_change#) AS checkpoint_change,
     TO_CHAR(checkpoint_time, 'dd-mon-yyyy hh24:mi:ss') AS checkpoint_time,
@@ -73,8 +73,8 @@ SELECT
 FROM 
     v$datafile_header
 GROUP BY 
-     STATUS, checkpoint_change#, checkpoint_time, fuzzy
+    CON_ID, STATUS, checkpoint_change#, checkpoint_time, fuzzy
 ORDER BY 
-     STATUS, checkpoint_change#, checkpoint_time
+    CON_ID, STATUS, checkpoint_change#, checkpoint_time
 /
 

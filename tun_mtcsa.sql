@@ -172,7 +172,7 @@ END;
 
 select 'column sql_id new_value m_sql_id' from dual;
 select 'column child_number new_value m_child_no' from dual;
-select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%CASE_DBA_&sql_id%'' and upper(sql_text) LIKE ''%SQL ANALYZE(%''  AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%++REMOVER_DO_SEL_DO_GUINA_XX++%'';' 
+select 'SELECT sql_id, child_number FROM v$sql WHERE sql_text LIKE ''%CASE_DBA_&sql_id%'' and upper(sql_text) NOT LIKE ''%SQL ANALYZE(%''  AND sql_text NOT LIKE ''%v$sql%'' AND sql_text NOT LIKE ''%++REMOVER_DO_SEL_DO_GUINA_XX++%'';' 
 
 from dual;
 

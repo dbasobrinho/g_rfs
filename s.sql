@@ -16,6 +16,8 @@
 -- |"O Guina não tinha dó, se ragir, BUMMM! vira pó!"
 -- +-------------------------------------------------------------------------------------------+
 -- echo "@s.sql" | sqlplus -s / as sysdba | tail -n +12 | egrep -i 'APP_BOB|SESSIONWAIT'
+-- while true; do echo "@s.sql" | sqlplus -s / as sysdba | tail -n +12 | egrep -i 'APP_BOB|SESSIONWAIT'; sleep 1; done
+-- while true; do date; echo "@s.sql" | sqlplus -s / as sysdba | tail -n +08; sleep 1; done
 -- +-------------------------------------------------------------------------------------------+
 SET TERMOUT OFF;
 ALTER SESSION SET NLS_DATE_FORMAT='DD-MON-YY HH24:MI:SS';

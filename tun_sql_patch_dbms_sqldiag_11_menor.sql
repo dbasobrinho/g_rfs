@@ -2,8 +2,8 @@
 -- | Objetivo   : Usando o SQLPATCH para capturar info de estatisticas          |
 -- | Criado por : Roberto Fernandes Sobrinho                                    |
 -- | Data       : 26/05/220 >> Aproveitando e fazendo no pelo                   |
--- | Exemplo    : coe_test_sqlid_patch                                          |
--- | Arquivo    : coe_test_sqlid_patch.sql                                      | 
+-- | Exemplo    : tun_sql_patch_dbms_sqldiag_internal.sql                       |
+-- | Arquivo    : tun_sql_patch_dbms_sqldiag_internal.sql                       | 
 -- | Modificacao:                                                               |
 -- | Referencia : https://oracle-base.com/articles/11g/sql-repair-advisor-11g   | 
 -- +----------------------------------------------------------------------------+
@@ -23,8 +23,8 @@ PROMPT +------------------------------------------------------------------------
 
 PROMPT
 PROMPT
-ACCEPT sql_id     CHAR PROMPT 'Enter SQL ID                : ' default aknpf417xwba0
-ACCEPT m_child_no CHAR PROMPT "Enter C.Number <>default=0> :"  default 0
+ACCEPT sql_id     CHAR PROMPT 'Enter SQL ID                : ' default caun79ccvx1rd
+--ACCEPT m_child_no CHAR PROMPT "Enter C.Number <>default=0> :"  default 0
 PROMPT
 
 SET TERMOUT OFF;
@@ -47,29 +47,31 @@ ACCEPT HINT_TEXT CHAR PROMPT "HINT_TEXT | DEFAULT = GATHER_PLAN_STATISTICS  :"  
 PROMPT
 set serveroutput on size 9999
 set echo on;
+SET SERVEROUTPUT ON;
 DECLARE
-    m_clob  clob;
+    m_clob      CLOB;
+    l_version   NUMBER;
+    l_patch_name VARCHAR2(100);
 BEGIN
-    SELECT sql_fulltext into m_clob
-      FROM v$sql
-     WHERE sql_id = '&&sql_id'
-       AND child_number = &&m_child_no ;
- 
-    SYS.DBMS_SQLDIAG_INTERNAL.I_CREATE_PATCH(
-        sql_text    => m_clob,
-        hint_text   => '&&HINT_TEXT' ,
-        name        => 'GUINA_Patch_&&sql_id&&m_child_no'
-        ); 
+        SELECT sql_fulltext INTO m_clob
+        FROM v$sql
+        WHERE sql_id = '&&sql_id'
+        AND rownum = 1;
+       SYS.DBMS_SQLDIAG_INTERNAL.I_CREATE_PATCH(
+           sql_text    => m_clob,
+           hint_text   => '&&HINT_TEXT',
+           name        => 'GUINA_Patch_&&sql_id'
+       );
 END;
 /
 set echo off;
 set lines 200
-SELECT name, created,  FORCE_MATCHING, STATUS FROM dba_sql_patches where name = 'GUINA_Patch_&&sql_id&&m_child_no'
+SELECT name, created,  FORCE_MATCHING, STATUS FROM dba_sql_patches where name = 'GUINA_Patch_&&sql_id'
 /
-select 'BEGIN sys.DBMS_SQLDIAG.drop_sql_patch(name => ''GUINA_Patch_&&sql_id&&m_child_no''); END; '||chr(10)||'/' as APAGA_DEPOIS_URGENTE from dual
+select 'BEGIN sys.DBMS_SQLDIAG.drop_sql_patch(name => ''GUINA_Patch_&&sql_id''); END; '||chr(10)||'/' as APAGA_DEPOIS_URGENTE from dual
 /
 UNDEFINE sql_id 
-UNDEFINE m_child_no
+--UNDEFINE m_child_no
 UNDEFINE HINT_TEXT
 SET TERMOUT OFF;
 $ORACLE_HOME/sqlplus/admin/glogin.sql
@@ -78,7 +80,25 @@ PROMPT.                                                                         
 PROMPT.                                                                                                                    |_  / _` / __| +-+-+-+-+-+-+-+-+-+-+
 PROMPT.                                                                                                         _   _   _   / / (_| \__ \ |r|f|s|o|b|r|i|n|h|o|
 PROMPT.                                                                                                        (_) (_) (_) /___\__,_|___/ +-+-+-+-+-+-+-+-+-+-+
-PROMPT
+
+
+
+--->> DECLARE
+--->>     m_clob  clob;
+--->> BEGIN
+--->>     SELECT sql_fulltext into m_clob
+--->>       FROM v$sql
+--->>      WHERE sql_id = '&&sql_id'
+--->>        AND child_number = &&m_child_no ;
+--->>  
+--->> 
+--->>     SYS.DBMS_SQLDIAG_INTERNAL.I_CREATE_PATCH(
+--->>         sql_text    => m_clob,
+--->>         hint_text   => '&&HINT_TEXT' ,
+--->>         name        => 'GUINA_Patch_&&sql_id&&m_child_no'
+--->>         ); 
+--->> END;
+--->> /
 
 ------------------  DECLARE
 ------------------  	m_clob  clob;
